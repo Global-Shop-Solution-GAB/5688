@@ -1,0 +1,2090 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_Approvers..Create
+Gui.F_Approvers..Size(4860,5625)
+Gui.F_Approvers..MinX(0)
+Gui.F_Approvers..MinY(0)
+Gui.F_Approvers..Position(0,0)
+Gui.F_Approvers..BackColor(-2147483633)
+Gui.F_Approvers..MousePointer(0)
+Gui.F_Approvers..Event(UnLoad,F_Approvers_UnLoad)
+Gui.F_Approvers..Caption("Sub Approvers")
+Gui.F_Approvers.trvAppr.Create(TreeView)
+Gui.F_Approvers.trvAppr.Size(4740,5340)
+Gui.F_Approvers.trvAppr.Position(0,0)
+Gui.F_Approvers.trvAppr.Enabled(False)
+Gui.F_Approvers.trvAppr.Anchor(15)
+Gui.F_Req_Apprv..Create
+Gui.F_Req_Apprv..Size(9720,6900)
+Gui.F_Req_Apprv..MinX(0)
+Gui.F_Req_Apprv..MinY(0)
+Gui.F_Req_Apprv..Position(0,0)
+Gui.F_Req_Apprv..BackColor(-2147483633)
+Gui.F_Req_Apprv..MousePointer(0)
+Gui.F_Req_Apprv..Event(UnLoad,F_Req_Apprv_UnLoad)
+Gui.F_Req_Apprv..Caption("Requisition Approval")
+Gui.F_Req_Apprv..MaxButton(False)
+Gui.F_Req_Apprv..Sizeable(False)
+Gui.F_Req_Apprv.frameRadio.Create(Frame)
+Gui.F_Req_Apprv.frameRadio.Size(4290,885)
+Gui.F_Req_Apprv.frameRadio.Position(2685,60)
+Gui.F_Req_Apprv.optReqAction.Create(Option)
+Gui.F_Req_Apprv.optReqAction.Size(2520,255)
+Gui.F_Req_Apprv.optReqAction.Position(150,180)
+Gui.F_Req_Apprv.optReqAction.Parent("frameRadio")
+Gui.F_Req_Apprv.optReqAction.Caption("Requistions Requiring Action")
+Gui.F_Req_Apprv.optReqAction.Event(Click,optReqAction_Click)
+Gui.F_Req_Apprv.optReqAction.TabStop(True)
+Gui.F_Req_Apprv.optReqAction.TabIndex(1)
+Gui.F_Req_Apprv.optActdReqs.Create(Option)
+Gui.F_Req_Apprv.optActdReqs.Size(2445,255)
+Gui.F_Req_Apprv.optActdReqs.Position(150,495)
+Gui.F_Req_Apprv.optActdReqs.Parent("frameRadio")
+Gui.F_Req_Apprv.optActdReqs.Caption("My Actioned Requisitions")
+Gui.F_Req_Apprv.optActdReqs.Event(Click,optActdReqs_Click)
+Gui.F_Req_Apprv.optActdReqs.TabStop(True)
+Gui.F_Req_Apprv.optActdReqs.TabIndex(1)
+Gui.F_Req_Apprv.gsgcApprv.Create(GsGridControl)
+Gui.F_Req_Apprv.gsgcApprv.Size(9015,4005)
+Gui.F_Req_Apprv.gsgcApprv.Position(285,1515)
+Gui.F_Req_Apprv.gsgcApprv.Event(RowClick,gsgcApprv_RowClick)
+Gui.F_Req_Apprv.gsgcApprv.Event(CellValueChanged,gsgcApprv_CellValueChanged)
+Gui.F_Req_Apprv.gsgcApprv.TabStop(True)
+Gui.F_Req_Apprv.gsgcApprv.TabIndex(4)
+Gui.F_Req_Apprv.cmdApproveAll.Create(Button)
+Gui.F_Req_Apprv.cmdApproveAll.Size(1320,405)
+Gui.F_Req_Apprv.cmdApproveAll.Position(4110,1020)
+Gui.F_Req_Apprv.cmdApproveAll.Caption("Approve All")
+Gui.F_Req_Apprv.cmdApproveAll.Event(Click,cmdApproveAll_Click)
+Gui.F_Req_Apprv.cmdApproveAll.TabStop(True)
+Gui.F_Req_Apprv.cmdApproveAll.TabIndex(3)
+Gui.F_Req_Apprv.lblApprv.Create(Label,"Y - Approved                    ",True,1395,255,0,7950,5595,True,0,"Arial",8,9498256,1)
+Gui.F_Req_Apprv.lblReject.Create(Label,"R - Rejected                   ",True,1395,255,0,7950,5850,True,0,"Arial",8,13353215,1)
+Gui.F_Req_Apprv.lblChange.Create(Label,"C - Changed                   ",True,1395,255,0,7950,6105,True,0,"Arial",8,12632256,1)
+Gui.F_Req_Apprv.lblPending.Create(Label,"P - Pending                     ",True,1395,255,0,7950,6360,True,0,"Arial",8,15128749,1)
+Gui.F_Req_Apprv.lblDblClick.Create(Label,"Double click line to view detail",True,2370,255,0,345,5745,True,0,"Arial",8,-2147483633,0)
+Gui.F_Req_Apprv.cmdOK.Create(Button)
+Gui.F_Req_Apprv.cmdOK.Size(1320,405)
+Gui.F_Req_Apprv.cmdOK.Position(405,6030)
+Gui.F_Req_Apprv.cmdOK.Caption("OK")
+Gui.F_Req_Apprv.cmdOK.DefaultValue("")
+Gui.F_Req_Apprv.cmdOK.Event(Click,cmdOK_Click)
+Gui.F_Req_Apprv.cmdOK.TabStop(True)
+Gui.F_Req_Apprv.cmdOK.TabIndex(5)
+Gui.F_Req_Apprv.cmdNotes.Create(Button)
+Gui.F_Req_Apprv.cmdNotes.Size(1320,405)
+Gui.F_Req_Apprv.cmdNotes.Position(1800,6030)
+Gui.F_Req_Apprv.cmdNotes.Caption("Notes")
+Gui.F_Req_Apprv.cmdNotes.DefaultValue("")
+Gui.F_Req_Apprv.cmdNotes.Event(Click,cmdNotes_Click)
+Gui.F_Req_Apprv.cmdNotes.TabStop(True)
+Gui.F_Req_Apprv.cmdNotes.TabIndex(6)
+Gui.F_Req_Apprv.cmdRefresh.Create(Button)
+Gui.F_Req_Apprv.cmdRefresh.Size(630,405)
+Gui.F_Req_Apprv.cmdRefresh.Position(3180,6030)
+Gui.F_Req_Apprv.cmdRefresh.Caption("Refresh")
+Gui.F_Req_Apprv.cmdRefresh.DefaultValue("")
+Gui.F_Req_Apprv.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.F_Req_Apprv.cmdRefresh.TabStop(True)
+Gui.F_Req_Apprv.cmdRefresh.TabIndex(7)
+Gui.F_Req_Apprv.chkOverride.Create(CheckBox)
+Gui.F_Req_Apprv.chkOverride.Size(2880,360)
+Gui.F_Req_Apprv.chkOverride.Position(390,1035)
+Gui.F_Req_Apprv.chkOverride.Caption("Approve for sub-approvers")
+Gui.F_Req_Apprv.chkOverride.Event(Click,chkOverride_Click)
+Gui.F_Req_Apprv.chkOverride.TabStop(True)
+Gui.F_Req_Apprv.chkOverride.TabIndex(2)
+Gui.F_Req_Apprv.lblAsterisk.Create(Label,"*",True,180,255,0,7680,5595,True,0,"Arial",8,-2147483633,0)
+Gui.F_Req_Apprv_Notes..Create
+Gui.F_Req_Apprv_Notes..Caption("Requisition Approval Notes")
+Gui.F_Req_Apprv_Notes..Size(7335,6330)
+Gui.F_Req_Apprv_Notes..MinX(0)
+Gui.F_Req_Apprv_Notes..MinY(0)
+Gui.F_Req_Apprv_Notes..Position(0,0)
+Gui.F_Req_Apprv_Notes..BackColor(-2147483633)
+Gui.F_Req_Apprv_Notes..MousePointer(0)
+Gui.F_Req_Apprv_Notes..Event(UnLoad,F_Req_Apprv_Notes_UnLoad)
+Gui.F_Req_Apprv_Notes..MaxButton(False)
+Gui.F_Req_Apprv_Notes..Sizeable(False)
+Gui.F_Req_Apprv_Notes.frameReqInfo.Create(Frame)
+Gui.F_Req_Apprv_Notes.frameReqInfo.Size(5355,1260)
+Gui.F_Req_Apprv_Notes.frameReqInfo.Position(855,75)
+Gui.F_Req_Apprv_Notes.lblReqNum.Create(Label,"Requisition #",True,1020,255,0,150,360,True,0,"Arial",8,-2147483633,0)
+Gui.F_Req_Apprv_Notes.lblReqNum.Parent("frameReqInfo")
+Gui.F_Req_Apprv_Notes.txtReqNum.Create(TextBox,"",True,750,300,0,1215,270,True,0,"Arial",8,-2147483643,1)
+Gui.F_Req_Apprv_Notes.txtReqNum.Parent("frameReqInfo")
+Gui.F_Req_Apprv_Notes.txtReqNum.Locked(True)
+Gui.F_Req_Apprv_Notes.lblLine.Create(Label,"Line",True,420,255,0,2130,360,True,0,"Arial",8,-2147483633,0)
+Gui.F_Req_Apprv_Notes.lblLine.Parent("frameReqInfo")
+Gui.F_Req_Apprv_Notes.txtLine.Create(TextBox,"",True,555,300,0,2565,270,True,0,"Arial",8,-2147483643,1)
+Gui.F_Req_Apprv_Notes.txtLine.Parent("frameReqInfo")
+Gui.F_Req_Apprv_Notes.txtLine.Locked(True)
+Gui.F_Req_Apprv_Notes.lblPart.Create(Label,"Part",True,390,255,0,765,840,True,0,"Arial",8,-2147483633,0)
+Gui.F_Req_Apprv_Notes.lblPart.Parent("frameReqInfo")
+Gui.F_Req_Apprv_Notes.txtPart.Create(TextBox,"",True,2265,300,0,1215,750,True,0,"Arial",8,-2147483643,1)
+Gui.F_Req_Apprv_Notes.txtPart.Parent("frameReqInfo")
+Gui.F_Req_Apprv_Notes.txtPart.Locked(True)
+Gui.F_Req_Apprv_Notes.lblLocn.Create(Label,"Locn",True,465,255,0,3690,840,True,0,"Arial",8,-2147483633,0)
+Gui.F_Req_Apprv_Notes.lblLocn.Parent("frameReqInfo")
+Gui.F_Req_Apprv_Notes.txtLocn.Create(TextBox,"",True,435,300,0,4185,750,True,0,"Arial",8,-2147483643,1)
+Gui.F_Req_Apprv_Notes.txtLocn.Parent("frameReqInfo")
+Gui.F_Req_Apprv_Notes.txtLocn.Locked(True)
+Gui.F_Req_Apprv_Notes.gsgcNotes.Create(GsGridControl)
+Gui.F_Req_Apprv_Notes.gsgcNotes.Size(6690,3660)
+Gui.F_Req_Apprv_Notes.gsgcNotes.Position(255,1515)
+Gui.F_Req_Apprv_Notes.gsgcNotes.Event(RowClick,gsgcNotes_RowClick)
+Gui.F_Req_Apprv_Notes.gsgcNotes.TabStop(True)
+Gui.F_Req_Apprv_Notes.gsgcNotes.TabIndex(1)
+Gui.F_Req_Apprv_Notes.frameDelete.Create(Frame)
+Gui.F_Req_Apprv_Notes.frameDelete.Size(4800,675)
+Gui.F_Req_Apprv_Notes.frameDelete.Position(255,5235)
+Gui.F_Req_Apprv_Notes.lblDelete.Create(Label,"Delete notes prior to",True,1575,255,0,120,345,True,0,"Arial",8,-2147483633,0)
+Gui.F_Req_Apprv_Notes.lblDelete.Parent("frameDelete")
+Gui.F_Req_Apprv_Notes.dtpDelete.Create(DatePicker)
+Gui.F_Req_Apprv_Notes.dtpDelete.Size(1515,285)
+Gui.F_Req_Apprv_Notes.dtpDelete.Position(1725,240)
+Gui.F_Req_Apprv_Notes.dtpDelete.Parent("frameDelete")
+Gui.F_Req_Apprv_Notes.dtpDelete.TabStop(True)
+Gui.F_Req_Apprv_Notes.dtpDelete.TabIndex(2)
+Gui.F_Req_Apprv_Notes.cmdDelete.Create(Button)
+Gui.F_Req_Apprv_Notes.cmdDelete.Size(1320,405)
+Gui.F_Req_Apprv_Notes.cmdDelete.Position(3375,195)
+Gui.F_Req_Apprv_Notes.cmdDelete.Parent("frameDelete")
+Gui.F_Req_Apprv_Notes.cmdDelete.Caption("Delete")
+Gui.F_Req_Apprv_Notes.cmdDelete.Event(Click,cmdDelete_Click)
+Gui.F_Req_Apprv_Notes.cmdDelete.TabStop(True)
+Gui.F_Req_Apprv_Notes.cmdDelete.TabIndex(3)
+Gui.F_Req_Apprv_Notes.cmdAddNew.Create(Button)
+Gui.F_Req_Apprv_Notes.cmdAddNew.Size(1320,405)
+Gui.F_Req_Apprv_Notes.cmdAddNew.Position(5445,5430)
+Gui.F_Req_Apprv_Notes.cmdAddNew.Caption("Add New")
+Gui.F_Req_Apprv_Notes.cmdAddNew.Event(Click,cmdAddNew_Click)
+Gui.F_Req_Apprv_Notes.cmdAddNew.TabStop(True)
+Gui.F_Req_Apprv_Notes.cmdAddNew.TabIndex(4)
+Gui.F_New_Notes..Create
+Gui.F_New_Notes..Caption("New Notes")
+Gui.F_New_Notes..Size(8100,5460)
+Gui.F_New_Notes..MinX(0)
+Gui.F_New_Notes..MinY(0)
+Gui.F_New_Notes..Position(0,0)
+Gui.F_New_Notes..BackColor(-2147483633)
+Gui.F_New_Notes..MaxButton(False)
+Gui.F_New_Notes..MousePointer(0)
+Gui.F_New_Notes..Sizeable(False)
+Gui.F_New_Notes..Event(UnLoad,F_New_Notes_UnLoad)
+Gui.F_New_Notes.frameReqInfo.Create(Frame)
+Gui.F_New_Notes.frameReqInfo.Size(6255,1260)
+Gui.F_New_Notes.frameReqInfo.Position(855,75)
+Gui.F_New_Notes.lblReqNum.Create(Label,"Requisition #",True,1020,255,0,150,360,True,0,"Arial",8,-2147483633,0)
+Gui.F_New_Notes.lblReqNum.Parent("frameReqInfo")
+Gui.F_New_Notes.txtReqNum.Create(TextBox,"",True,750,300,0,1215,270,True,0,"Arial",8,-2147483643,1)
+Gui.F_New_Notes.txtReqNum.Parent("frameReqInfo")
+Gui.F_New_Notes.txtReqNum.Locked(True)
+Gui.F_New_Notes.lblLine.Create(Label,"Line",True,420,255,0,2130,360,True,0,"Arial",8,-2147483633,0)
+Gui.F_New_Notes.lblLine.Parent("frameReqInfo")
+Gui.F_New_Notes.txtLine.Create(TextBox,"",True,555,300,0,2565,270,True,0,"Arial",8,-2147483643,1)
+Gui.F_New_Notes.txtLine.Parent("frameReqInfo")
+Gui.F_New_Notes.txtLine.Locked(True)
+Gui.F_New_Notes.txtDate.Create(TextBox,"",True,990,300,0,1215,750,True,0,"Arial",8,-2147483643,1)
+Gui.F_New_Notes.txtDate.Parent("frameReqInfo")
+Gui.F_New_Notes.txtDate.Locked(True)
+Gui.F_New_Notes.lblDate.Create(Label,"Date",True,435,255,0,735,840,True,0,"Arial",8,-2147483633,0)
+Gui.F_New_Notes.lblDate.Parent("frameReqInfo")
+Gui.F_New_Notes.lblDate.DefaultValue("")
+Gui.F_New_Notes.lblTime.Create(Label,"Time",True,450,255,0,2415,840,True,0,"Arial",8,-2147483633,0)
+Gui.F_New_Notes.lblTime.Parent("frameReqInfo")
+Gui.F_New_Notes.txtTime.Create(TextBox,"",True,1110,300,0,2895,750,True,0,"Arial",8,-2147483643,1)
+Gui.F_New_Notes.txtTime.Parent("frameReqInfo")
+Gui.F_New_Notes.txtTime.Locked(True)
+Gui.F_New_Notes.lblUser.Create(Label,"Approver",True,810,255,0,4245,810,True,0,"Arial",8,-2147483633,0)
+Gui.F_New_Notes.lblUser.Parent("frameReqInfo")
+Gui.F_New_Notes.txtUser.Create(TextBox,"",True,945,300,0,5100,750,True,0,"Arial",8,-2147483643,1)
+Gui.F_New_Notes.txtUser.Parent("frameReqInfo")
+Gui.F_New_Notes.txtUser.Locked(True)
+Gui.F_New_Notes.txtText.Create(TextboxM)
+Gui.F_New_Notes.txtText.Size(7875,2970)
+Gui.F_New_Notes.txtText.Position(60,1440)
+Gui.F_New_Notes.txtText.MaxLength(32700)
+Gui.F_New_Notes.txtText.TabStop(True)
+Gui.F_New_Notes.txtText.TabIndex(1)
+Gui.F_New_Notes.cmdSave.Create(Button)
+Gui.F_New_Notes.cmdSave.Size(1320,405)
+Gui.F_New_Notes.cmdSave.Position(210,4605)
+Gui.F_New_Notes.cmdSave.Caption("Save")
+Gui.F_New_Notes.cmdSave.Event(Click,cmdSave_Click)
+Gui.F_New_Notes.cmdSave.TabStop(True)
+Gui.F_New_Notes.cmdSave.TabIndex(2)
+Gui.F_New_Notes.cmdClear.Create(Button)
+Gui.F_New_Notes.cmdClear.Size(1320,405)
+Gui.F_New_Notes.cmdClear.Position(1635,4605)
+Gui.F_New_Notes.cmdClear.Caption("Clear")
+Gui.F_New_Notes.cmdClear.Event(Click,cmdClear_Click)
+Gui.F_New_Notes.cmdClear.TabStop(True)
+Gui.F_New_Notes.cmdClear.TabIndex(3)
+Gui.F_New_Notes.txtRowNum.Create(TextBox,"",False,105,300,0,195,195,True,0,"Arial",8,-2147483643,1)
+Gui.F_Password..Create
+Gui.F_Password..Caption("Enter GS Password")
+Gui.F_Password..Size(4290,1440)
+Gui.F_Password..MinX(0)
+Gui.F_Password..MinY(0)
+Gui.F_Password..Position(0,0)
+Gui.F_Password..BackColor(-2147483633)
+Gui.F_Password..MaxButton(False)
+Gui.F_Password..MousePointer(0)
+Gui.F_Password..Sizeable(False)
+Gui.F_Password..Event(UnLoad,F_Password_UnLoad)
+Gui.F_Password..AlwaysOnTop(True)
+Gui.F_Password..MinButton(False)
+Gui.F_Password.txtPswrd.Create(TextBox,"",True,3825,300,0,195,195,True,0,"Arial",8,-2147483643,1)
+Gui.F_Password.txtPswrd.PasswordChar("*")
+Gui.F_Password.txtPswrd.Event(KeyPressEnter,cmdPswrdOK_Click)
+Gui.F_Password.txtPswrd.TabStop(True)
+Gui.F_Password.txtPswrd.TabIndex(1)
+Gui.F_Password.cmdPswrdOK.Create(Button)
+Gui.F_Password.cmdPswrdOK.Size(1320,405)
+Gui.F_Password.cmdPswrdOK.Position(150,660)
+Gui.F_Password.cmdPswrdOK.Event(Click,cmdPswrdOK_Click)
+Gui.F_Password.cmdPswrdOK.Caption("OK")
+Gui.F_Password.cmdPswrdOK.TabStop(True)
+Gui.F_Password.cmdPswrdOK.TabIndex(2)
+Gui.F_Rej_Why..Create
+Gui.F_Rej_Why..Caption("Reject")
+Gui.F_Rej_Why..Size(6375,4965)
+Gui.F_Rej_Why..MinX(0)
+Gui.F_Rej_Why..MinY(0)
+Gui.F_Rej_Why..Position(0,0)
+Gui.F_Rej_Why..AlwaysOnTop(True)
+Gui.F_Rej_Why..BackColor(-2147483633)
+Gui.F_Rej_Why..ControlBox(False)
+Gui.F_Rej_Why..MaxButton(False)
+Gui.F_Rej_Why..MinButton(False)
+Gui.F_Rej_Why..MousePointer(0)
+Gui.F_Rej_Why..Sizeable(False)
+Gui.F_Rej_Why.lblReqNum.Create(Label,"PO Req: ",True,1935,255,0,90,135,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Why.lblLine.Create(Label,"Line: ",True,1935,255,0,90,405,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Why.txtRejReason.Create(TextboxM)
+Gui.F_Rej_Why.txtRejReason.Size(6285,3315)
+Gui.F_Rej_Why.txtRejReason.Position(0,615)
+Gui.F_Rej_Why.txtRejReason.TabStop(True)
+Gui.F_Rej_Why.txtRejReason.TabIndex(1)
+Gui.F_Rej_Why.cmdSubmit.Create(Button)
+Gui.F_Rej_Why.cmdSubmit.Size(1320,405)
+Gui.F_Rej_Why.cmdSubmit.Position(150,4065)
+Gui.F_Rej_Why.cmdSubmit.Caption("Submit")
+Gui.F_Rej_Why.cmdSubmit.Event(Click,cmdSubmit_Click)
+Gui.F_Rej_Why.cmdSubmit.TabStop(True)
+Gui.F_Rej_Why.cmdSubmit.TabIndex(2)
+Gui.F_Rej_Why.lblRejReason.Create(Label,"Provide reason for rejecting this PO Req",True,3075,255,0,3195,405,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Why.lblWhy.Create(Label,"This rejection needs a more detailed reason. Please write in more detail or add more detail.",False,4455,540,0,1665,4050,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Why.lblWhy.DefaultValue("")
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.sEmailSig.Declare(String,"This email was automatically generated by Global Shop, please do not reply.")
+V.Global.sUserList.Declare
+V.Global.sRejReason.Declare
+V.Global.bAdmin.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Author: Bix
+'Date: 19 Sept 2019
+'Voestalpine Roll Forming Corp
+'GCG_5688_PO_Req_Approval.g2u
+V.Local.sError.Declare
+V.Local.sSQL.Declare
+V.Local.sFile.Declare
+V.Local.sReqNum.Declare
+V.Local.sIcon.Declare
+V.Local.bFileExists.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.SelectCase(V.Caller.Hook)
+	F.Intrinsic.Control.Case(16190)
+		'Purchase Requisition Maintenance Populate Hook
+		F.Intrinsic.Control.If(V.Caller.Switches,=,"V")
+			F.Intrinsic.String.Build("{0}GCG_5688_{1}_{2}_POREQ.txt",V.Caller.LocalGSSTempDir,V.Caller.User.Trim,V.Caller.CompanyCode,V.Local.sFile)
+			F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bFileExists)
+			F.Intrinsic.Control.If(V.Local.bFileExists)
+				F.Intrinsic.File.File2String(V.Local.sFile,V.Local.sReqNum)
+				F.Intrinsic.File.DeleteFile(V.Local.sFile)
+				F.Intrinsic.String.Split(V.Local.sReqNum,"*!*",V.Local.sReqNum)
+				V.Passed.000003.Set(V.Local.sReqNum(0))
+				F.Intrinsic.Control.If(V.Local.sReqNum.UBound,=,1)
+					V.Passed.000001.Set(V.Local.sReqNum(1))
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case(16240)
+		'Purchase Requisition Maintenance Post Save Hook
+		F.Intrinsic.Control.If(V.Caller.Switches,=,"O")
+			'Change Purchase Req, reset approval process
+			F.Intrinsic.Control.CallSub(ResetApproval,"ReqNum",V.Passed.000003,"Orig",V.Passed.000006)
+		F.Intrinsic.Control.ElseIf(V.Caller.Switches,=,"N")
+			'New Purchase Req, start approval process
+			F.Intrinsic.Control.CallSub(StartApproval,"ReqNum",V.Passed.000003,"Orig",V.Passed.000006)
+		F.Intrinsic.Control.ElseIf(V.Caller.Switches,=,"D")
+			'Delete Purchase Req, delete approval process
+			F.Intrinsic.Control.CallSub(ClearApproval,"ReqNum",V.Passed.000003)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.CaseElse
+		'PurReq Approval Screen for the purpose of this project
+		
+		'Check if user is setup to be an approver for POReqs
+		F.Intrinsic.String.Build("select 1 from PURCH_REQ_APPRV where USERID = '{0}';",V.Caller.User,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenCompanyConnection
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.ODBC.Connection!con.Close
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			'User is not setup for PO approval
+			F.Intrinsic.UI.Msgbox("You are not setup for Purchase Requisition Approvals. Please see a system administrator to get setup to use this program.","PERMISSIONS NOT SET")
+			F.Intrinsic.Control.End
+		F.Intrinsic.Control.EndIf
+		
+		Gui.F_Req_Apprv_Notes..BindTo(V.Screen.F_Req_Apprv.HWnd,50,18)
+		Gui.F_New_Notes..BindTo(V.Screen.F_Req_Apprv_Notes.HWnd,-25,30)
+		Gui.F_Password..BindTo(V.Screen.F_Req_Apprv.HWnd,150,150)
+		Gui.F_Approvers..BindTo(V.Screen.F_Req_Apprv.HWnd,135,45)
+		Gui.F_Rej_Why..BindTo(V.Screen.F_Req_Apprv.HWnd,135,45)
+		
+		F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,V.Local.sIcon)
+		Gui.F_Req_Apprv..Icon(V.Local.sIcon)
+		Gui.F_Req_Apprv_Notes..Icon(V.Local.sIcon)
+		Gui.F_New_Notes..Icon(V.Local.sIcon)
+		Gui.F_Password..Icon(V.Local.sIcon)
+		Gui.F_Approvers..Icon(V.Local.sIcon)
+		Gui.F_Rej_Why..Icon(V.Local.sIcon)
+		
+		F.Intrinsic.Control.CallSub(GetReqActions)
+		F.Intrinsic.Control.CallSub(SetupReqActionsGV)
+		F.Intrinsic.Control.CallSub(GetReqHistory)
+		F.Intrinsic.Control.CallSub(SetupReqHistoryGV)
+		
+		Gui.F_Req_Apprv.optReqAction.Value(1)
+		
+		F.Global.Security.IsInGroup(V.Caller.User,"REQAPADM",V.Global.bAdmin)
+		
+		F.Intrinsic.Control.If(V.Global.bAdmin)
+			Gui.F_Req_Apprv..ContextMenuCreate("cxtReq_Apprv_chk")
+			Gui.F_Req_Apprv..ContextMenuAddItem("cxtReq_Apprv_chk","SubApprv",0,"View Subapprovers")
+			Gui.F_Req_Apprv..ContextMenuSetItemEventHandler("cxtReq_Apprv_chk","SubApprv",OpenSubApprvTree)
+			Gui.F_Req_Apprv.chkOverride.ContextMenuAttach("cxtReq_Apprv_chk")
+		F.Intrinsic.Control.Else
+			Gui.F_Req_Apprv.chkOverride.Enabled(False)
+		F.Intrinsic.Control.EndIf
+		
+		Gui.F_Req_Apprv_Notes..ContextMenuCreate("cxtNotes_Opt")
+		Gui.F_Req_Apprv_Notes..ContextMenuAddItem("cxtNotes_Opt","Delete",0,"Delete")
+		Gui.F_Req_Apprv_Notes..ContextMenuSetItemEventHandler("cxtNotes_Opt","Delete",DeleteNotes)
+		Gui.F_Req_Apprv_Notes.gsgcNotes.ContextMenuAttach("cxtNotes_Opt")
+		
+		F.Intrinsic.Control.BlockEvents
+		Gui.F_Req_Apprv..Show
+		F.Intrinsic.Control.UnBlockEvents
+		Gui.F_Req_Apprv.gsgcApprv.SetFocus
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.F_Approvers_UnLoad.Start
+V.Local.sError.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Approvers..Visible(False)
+
+Gui.F_Req_Apprv..Enabled(True)
+Gui.F_Req_Apprv..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Approvers_UnLoad.End
+
+Program.Sub.FillInApproverTree.Start
+'V.Local.sError.Declare
+'V.Local.sFilter.Declare
+'V.Local.sUser.Declare
+'V.Local.sOrdinal.Declare
+'F.Intrinsic.Control.Try
+
+''Find Top of List
+'F.Intrinsic.String.Build("USERID = '{0}'",V.Caller.User,V.Local.sFilter)
+'F.Data.DataView.SetFilter("dtPOApprovers","dvUser",V.Local.sFilter)
+
+'F.Intrinsic.Control.DoUntil(V.DataView.dtPOApprovers!dvUser.RowCount,=,0)
+'	V.Local.sUser.Set(V.DataView.dtPOApprovers!dvUser(0).PRIMARY_APPROVER!FieldVal)
+'	F.Intrinsic.String.Build("USERID = '{0}'",V.Local.sUser,V.Local.sFilter)
+'	F.Data.DataView.SetFilter("dtPOApprovers","dvUser",V.Local.sFilter)
+'F.Intrinsic.Control.Loop
+
+'Gui.F_Approvers.trvAppr.AddNode("",,V.Local.sUser,V.Local.sUser)
+
+''Start recursion from the highest level in the current tree
+'F.Intrinsic.String.Build("PRIMARY_APPROVER = '{0}'",V.Local.sUser,V.Local.sFilter)
+'F.Data.DataView.SetFilter("dtPOApprovers","dvUser",V.Local.sFilter)
+'F.Intrinsic.Control.CallSub(ApproverRecursion,"Originator",V.Caller.User,"ResetFilter",V.Local.sFilter)
+
+'Gui.F_Approvers.trvAppr.SetSelectedItemByKey(V.Caller.User)
+
+'F.Intrinsic.Control.Catch
+'	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+'	F.Intrinsic.UI.Msgbox(V.Local.sError)
+'	F.Intrinsic.Control.End
+'F.Intrinsic.Control.EndTry
+Program.Sub.FillInApproverTree.End
+
+Program.Sub.ApproverRecursion.Start
+'V.Args.Originator,V.Args.ResetFilter,V.Args.ResetGroupFilter
+V.Local.sError.Declare
+V.Local.sFilter.Declare
+V.Local.sGroupFilter.Declare
+V.Local.sGroupFilterSave.Declare
+V.Local.sKey.Declare
+V.Local.sGroupKey.Declare
+V.Local.sTitle.Declare
+V.Local.sName.Declare
+V.Local.sGroup.Declare
+V.Local.iCnt.Declare
+V.Local.iCnt2.Declare
+F.Intrinsic.Control.Try
+
+
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataView.dtPOApproverGroups!dvUser.RowCount--,1)
+	'loop through groups that user is apart of
+	V.Local.sGroup.Set(V.DataView.dtPOApproverGroups!dvUser(V.Local.iCnt).ENG_GROUP!FieldValTrim)
+	F.Intrinsic.String.Build("PRIMARY_APPROVER = '{0}' and APPROVER_TYPE = 'G'",V.DataView.dtPOApproverGroups!dvUser(V.Local.iCnt).ENG_GROUP!FieldValTrim,V.Local.sGroupFilterSave)
+	F.Data.DataView.SetFilter("dtPOApprovers","dvUser",V.Local.sGroupFilterSave)
+	F.Data.DataView.SetFilter("dtPOApproverGroups","dvUser","USERID = 'Blank DataView'")
+	
+	F.Intrinsic.Control.For(V.Local.iCnt2,0,V.DataView.dtPOApprovers!dvUser.RowCount--,1)
+		'loop through users that have the group as their primary approver
+		F.Intrinsic.String.Build("{0}*!*{1}",V.Global.sUserList,V.DataView.dtPOApprovers!dvUser(V.Local.iCnt2).USERID!FieldVal,V.Global.sUserList)
+		F.Global.Security.GetFullName(V.DataView.dtPOApprovers!dvUser(V.Local.iCnt2).USERID!FieldVal,V.Local.sName)
+		F.Intrinsic.String.Build("{0}{1}",V.Args.BuildKey,V.DataView.dtPOApprovers!dvUser(V.Local.iCnt2).USERID!FieldVal,V.Local.sKey)
+		F.Intrinsic.Control.If(V.DataView.dtPOApprovers!dvUser(V.Local.iCnt2).USERID!FieldVal,=,V.Args.Originator)
+			F.Intrinsic.String.Build("{0} - {1} (Originator) (Group: {2})",V.DataView.dtPOApprovers!dvUser(V.Local.iCnt2).USERID!FieldVal,V.Local.sName,V.Local.sGroup,V.Local.sTitle)
+			Gui.F_Approvers.trvAppr.AddTreeNode(V.Args.BuildKey,4,V.Local.sKey,V.Local.sTitle,True)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0} - {1} (Group: {2})",V.DataView.dtPOApprovers!dvUser(V.Local.iCnt2).USERID!FieldVal,V.Local.sName,V.Local.sGroup,V.Local.sTitle)
+			Gui.F_Approvers.trvAppr.AddTreeNode(V.Args.BuildKey,4,V.Local.sKey,V.Local.sTitle,True)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Build("PRIMARY_APPROVER = '{0}'",V.DataView.dtPOApprovers!dvUser(V.Local.iCnt2).USERID!FieldVal,V.Local.sFilter)
+		F.Intrinsic.String.Build("USERID = '{0}'",V.DataView.dtPOApprovers!dvUser(V.Local.iCnt2).USERID!FieldVal,V.Local.sGroupFilter)
+		F.Data.DataView.SetFilter("dtPOApprovers","dvUser",V.Local.sFilter)
+		F.Data.DataView.SetFilter("dtPOApproverGroups","dvUser",V.Local.sGroupFilter)
+		F.Intrinsic.Control.If(V.DataView.dtPOApprovers!dvUser.RowCount,>,0,"or",V.DataView.dtPOApproverGroups!dvUser.RowCount,>,0)
+			F.Intrinsic.Control.CallSub(ApproverRecursion,"Originator",V.Args.Originator,"ResetFilter",V.Local.sFilter,"ResetGroupFilter",V.Local.sGroupFilter,"BuildKey",V.Local.sKey)
+		F.Intrinsic.Control.EndIf
+		F.Data.DataView.SetFilter("dtPOApproverGroups","dvUser","USERID = 'Blank DataView'")
+		F.Data.DataView.SetFilter("dtPOApprovers","dvUser",V.Local.sGroupFilterSave)
+	F.Intrinsic.Control.Next(V.Local.iCnt2)
+	
+	F.Data.DataView.SetFilter("dtPOApproverGroups","dvUser",V.Args.ResetGroupFilter)
+	F.Data.DataView.SetFilter("dtPOApprovers","dvUser",V.Args.ResetFilter)
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataView.dtPOApprovers!dvUser.RowCount--,1)
+	'loop through users that have the user as the approver
+	F.Intrinsic.String.Build("{0}*!*{1}",V.Global.sUserList,V.DataView.dtPOApprovers!dvUser(V.Local.iCnt).USERID!FieldVal,V.Global.sUserList)
+	F.Global.Security.GetFullName(V.DataView.dtPOApprovers!dvUser(V.Local.iCnt).USERID!FieldVal,V.Local.sName)
+	F.Intrinsic.String.Build("{0}{1}",V.Args.BuildKey,V.DataView.dtPOApprovers!dvUser(V.Local.iCnt).USERID!FieldVal,V.Local.sKey)
+	F.Intrinsic.Control.If(V.DataView.dtPOApprovers!dvUser(V.Local.iCnt).USERID!FieldVal,=,V.Args.Originator)
+		F.Intrinsic.String.Build("{0} - {1} (Originator)",V.DataView.dtPOApprovers!dvUser(V.Local.iCnt).USERID!FieldVal,V.Local.sName,V.Local.sTitle)
+		Gui.F_Approvers.trvAppr.AddTreeNode(V.Args.BuildKey,4,V.Local.sKey,V.Local.sTitle,True)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0} - {1}",V.DataView.dtPOApprovers!dvUser(V.Local.iCnt).USERID!FieldVal,V.Local.sName,V.Local.sTitle)
+		Gui.F_Approvers.trvAppr.AddTreeNode(V.Args.BuildKey,4,V.Local.sKey,V.Local.sTitle,True)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("PRIMARY_APPROVER = '{0}'",V.DataView.dtPOApprovers!dvUser(V.Local.iCnt).USERID!FieldVal,V.Local.sFilter)
+	F.Intrinsic.String.Build("USERID = '{0}'",V.DataView.dtPOApprovers!dvUser(V.Local.iCnt).USERID!FieldVal,V.Local.sGroupFilter)
+	F.Data.DataView.SetFilter("dtPOApprovers","dvUser",V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtPOApproverGroups","dvUser",V.Local.sGroupFilter)
+	F.Intrinsic.Control.If(V.DataView.dtPOApprovers!dvUser.RowCount,>,0,"or",V.DataView.dtPOApproverGroups!dvUser.RowCount,>,0)
+		F.Intrinsic.Control.CallSub(ApproverRecursion,"Originator",V.Args.Originator,"ResetFilter",V.Local.sFilter,"ResetGroupFilter",V.Local.sGroupFilter,"BuildKey",V.Local.sKey)
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.SetFilter("dtPOApproverGroups","dvUser",V.Args.ResetGroupFilter)
+	F.Data.DataView.SetFilter("dtPOApprovers","dvUser",V.Args.ResetFilter)
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.ApproverRecursion.End
+
+Program.Sub.F_Req_Apprv_UnLoad.Start
+F.Intrinsic.Control.End
+Program.Sub.F_Req_Apprv_UnLoad.End
+
+Program.Sub.gsgcApprv_RowClick.Start
+V.Local.sError.Declare
+V.Local.sDataTable.Declare
+V.Local.sFile.Declare
+V.Local.sReqNumAndLine.Declare
+V.Local.iPID.Declare
+V.Local.bRunning.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Args.Clicks,=,1,"or",V.Args.Button.UCase,!=,"LEFT")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+Gui.F_Req_Apprv.gsgcApprv.GetFocusedGridview(V.Local.sDataTable)
+F.Intrinsic.Control.If(V.DataTable.[V.Local.sDataTable](V.Args.RowIndex).PART!FieldVal,=,">>> Req Total >>>>>>")
+	F.Intrinsic.String.Build("{0}GCG_5688_{1}_{2}_POREQ.txt",V.Caller.LocalGSSTempDir,V.Caller.User.Trim,V.Caller.CompanyCode,V.Local.sFile)
+	F.Intrinsic.File.String2File(V.Local.sFile,V.DataTable.[V.Local.sDataTable](V.Args.RowIndex).PO_REQ_NUMBER!FieldVal)
+	Gui.F_Req_Apprv..Enabled(False)
+	V.Local.bRunning.Set(True)
+	F.Intrinsic.Control.If(V.DataTable.[V.Local.sDataTable](V.Args.RowIndex).HIST!FieldVal,=,0)
+		F.Global.General.LaunchMenuTask(272,0,V.Local.iPID)
+	F.Intrinsic.Control.Else
+		F.Global.General.LaunchMenuTask(274,0,V.Local.iPID)
+	F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.DoUntil(V.Local.bRunning.Not)
+'		F.Intrinsic.Task.IsProgramRunning(V.Local.iPID,V.Local.bRunning)
+'	F.Intrinsic.Control.Loop
+	Gui.F_Req_Apprv..Enabled(True)
+	Gui.F_Req_Apprv..SetFocus
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("{0}GCG_5688_{1}_{2}_POREQ.txt",V.Caller.LocalGSSTempDir,V.Caller.User.Trim,V.Caller.CompanyCode,V.Local.sFile)
+	F.Intrinsic.String.Build("{0}*!*{1}",V.DataTable.[V.Local.sDataTable](V.Args.RowIndex).PO_REQ_NUMBER!FieldVal,V.DataTable.[V.Local.sDataTable](V.Args.RowIndex).PO_REQ_LINE!FieldVal,V.Local.sReqNumAndLine)
+	F.Intrinsic.File.String2File(V.Local.sFile,V.Local.sReqNumAndLine)
+	Gui.F_Req_Apprv..Enabled(False)
+	V.Local.bRunning.Set(True)
+	F.Intrinsic.Control.If(V.DataTable.[V.Local.sDataTable](V.Args.RowIndex).HIST!FieldVal,=,0)
+		F.Global.General.LaunchMenuTask(272,0,V.Local.iPID)
+	F.Intrinsic.Control.Else
+		F.Global.General.LaunchMenuTask(274,0,V.Local.iPID)
+	F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.DoUntil(V.Local.bRunning.Not)
+'		F.Intrinsic.Task.IsProgramRunning(V.Local.iPID,V.Local.bRunning)
+'	F.Intrinsic.Control.Loop
+	Gui.F_Req_Apprv..Enabled(True)
+	Gui.F_Req_Apprv..SetFocus
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.gsgcApprv_RowClick.End
+
+Program.Sub.GetReqHistory.Start
+V.Local.sError.Declare
+V.Local.sSQL.Declare
+V.Local.sGroups.Declare
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Intrinsic.String.Build("select REQ_NUM as PO_REQ_NUMBER, LINE_NUM as PO_REQ_LINE, '>>> Req Total >>>>>>' as PART, REQ_AMT as AMOUNT, APPROVE from GCG_5688_POREQ_APPRV where APPROVER = '{0}';",V.Caller.User,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtPurReqApprv","con",V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtReqHist","con","select REQ_NUM, max(cast(DATE_APPRV as char(10)) + cast(TIME_APPRV as char(8))) as TOP_TIME from GCG_5688_POREQ_APPRV where APPROVE <> 'C' group by REQ_NUM;")
+F.Data.DataTable.CreateFromSQL("dtReqHistUsers","con","select REQ_NUM, cast(DATE_APPRV as char(10)) + cast(TIME_APPRV as char(8)) as DATE_WITH_TIME, APPROVE, APPROVER from GCG_5688_POREQ_APPRV;")
+F.Data.DataTable.CreateFromSQL("dtPurReqs","con","select PO_REQ_NUMBER, PO_REQ_LINE, rtrim(PART) as PART, rtrim(LOCATION) as LOCATION, DATE_DUE, QUANTITY * UNIT_PRICE as AMOUNT, USERID_ORIGINATOR as ORIGINATOR, 0 as HIST from V_PURCHASE_REQS;")
+F.Data.DataTable.CreateFromSQL("dtPurReqsHist","con","select REQ_NUM as PO_REQ_NUMBER, REQ_LINE as PO_REQ_LINE, rtrim(PART) as PART, rtrim(LOCN) as LOCATION, DUE_DATE as DATE_DUE, QTY * UNIT_PRICE + PUR_TAX as AMOUNT, USER_ORIG as ORIGINATOR, 1 as HIST from V_REQ_HIST;")
+F.Data.Dictionary.CreateFromSQL("dNextApprover","con","select USERID, PRIMARY_APPROVER from V_PURCH_REQ_APPRV;")
+F.Data.Dictionary.CreateFromSQL("dNonHistoryReqs","con","select distinct PO_REQ_NUMBER, 0 as HIST from V_PURCHASE_REQS;")
+F.ODBC.Connection!con.Close
+
+F.Data.DataTable.Merge("dtPurReqsHist","dtPurReqs",True,2)
+F.Data.DataTable.Close("dtPurReqsHist")
+
+F.Data.Linq.Join("InnerJoin","DataTable","dtPurReqApprv*!*HIST","DataTable","dtPurReqs*!*REQS","HIST.PO_REQ_NUMBER = REQS.PO_REQ_NUMBER","REQS.PO_REQ_NUMBER*!*REQS.PO_REQ_LINE*!*REQS.PART*!*REQS.LOCATION*!*REQS.ORIGINATOR*!*REQS.DATE_DUE*!*REQS.AMOUNT*!*REQS.HIST","","","","dtPurReqsFilter",False)
+F.Data.Linq.Join("LeftJoin","DataTable","dtReqHist*!*MAXTIME","DataTable","dtReqHistUsers*!*USERS","MAXTIME.REQ_NUM = USERS.REQ_NUM and MAXTIME.TOP_TIME = USERS.DATE_WITH_TIME","MAXTIME.REQ_NUM*!*USERS.APPROVER",,,,"dtLastApprover",False)
+F.Data.DataTable.Close("dtReqHist")
+F.Data.DataTable.Close("dtReqHistUsers")
+F.Data.Dictionary.CreateFromDataTable("dLastApprover","dtLastApprover","REQ_NUM","APPROVER")
+F.Data.DataTable.Close("dtLastApprover")
+
+F.Data.DataTable.AddColumn("dtPurReqApprv","LAST_APPROVER","String")
+F.Data.DataTable.AddColumn("dtPurReqApprv","NEXT_APPROVER","String")
+F.Data.DataTable.FillFromDictionary("dtPurReqApprv","dLastApprover","PO_REQ_NUMBER","LAST_APPROVER")
+F.Data.Dictionary.SetDefaultReturn("dNextApprover","*NONE*")
+F.Data.DataTable.FillFromDictionary("dtPurReqApprv","dNextApprover","LAST_APPROVER","NEXT_APPROVER")
+F.Data.Dictionary.Close("dLastApprover")
+F.Data.Dictionary.Close("dNextApprover")
+
+'Set next approver for approved lines to *NONE*
+F.Data.DataView.Create("dtPurReqApprv","dvApproved")
+F.Data.DataView.SetFilter("dtPurReqApprv","dvApproved","APPROVE = 'Y' or APPROVE = 'R'")
+F.Data.DataView.SetValue("dtPurReqApprv","dvApproved",-1,"NEXT_APPROVER","*NONE*")
+F.Data.DataView.Close("dtPurReqApprv","dvApproved")
+
+F.Data.DataTable.AddColumn("dtPurReqApprv","HIST","Long")
+F.Data.Dictionary.SetDefaultReturn("dNonHistoryReqs",1)
+F.Data.DataTable.FillFromDictionary("dtPurReqApprv","dNonHistoryReqs","PO_REQ_NUMBER","HIST")
+F.Data.Dictionary.Close("dNonHistoryReqs")
+
+F.Data.DataTable.Create("dtPurReqApprvHist",True)
+F.Data.DataTable.AddColumn("dtPurReqApprvHist","PO_REQ_NUMBER","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvHist","PO_REQ_LINE","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvHist","PART","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvHist","LOCATION","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvHist","ORIGINATOR","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvHist","DATE_DUE","Date")
+F.Data.DataTable.AddColumn("dtPurReqApprvHist","AMOUNT","Float")
+F.Data.DataTable.AddColumn("dtPurReqApprvHist","APPROVE","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvHist","NEXT_APPROVER","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvHist","HIST","Long",1)
+
+F.Data.DataTable.Merge("dtPurReqsFilter","dtPurReqApprvHist",True,2)
+F.Data.DataTable.Merge("dtPurReqApprv","dtPurReqApprvHist",True,2)
+
+F.Data.DataTable.Close("dtPurReqsFilter")
+F.Data.DataTable.Close("dtPurReqApprv")
+
+F.Data.DataView.Create("dtPurReqApprvHist","dvOrdered",22,,"PO_REQ_NUMBER asc, PO_REQ_LINE asc")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.GetReqHistory.End
+
+Program.Sub.SetupReqHistoryGV.Start
+V.Local.sError.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Req_Apprv.gsgcApprv.AddGridviewFromDataview("gvReqHist","dtPurReqApprvHist","dvOrdered")
+
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","Multiselect",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","Editable",True)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","ReadOnly",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","AllowSort",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","AllowFilter",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","ShowDetailTabs",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","ShowGroupPanel",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","AllowAddRows",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","AllowDeleteRows",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","AllowColumnResizing",True)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","AllowColumnMoving",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","MultiSelectMode",2)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","EnableAppearanceOddRow",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","EnableAppearanceEvenRow",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","OptionsViewRowAutoHeight",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","ColumnPanelRowHeight",-1)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","OptionsMenuShowAutoFilterRowItem",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","EnterKeyNavigation",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","OptionsSelectionEnableAppearanceFocusedRow",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","OptionsFindAlwaysVisible",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","ActiveFilterString","")
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","OptionsViewShowAutoFilterRow",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","OptionsViewColumnAutoWidth",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","OptionsFilterUseNewCustomFilterDialog",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqHist","OptionsViewShowFilterPanelMode",False)
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","LOCATION","Visible",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","HIST","Visible",False)
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PO_REQ_NUMBER","Caption","Req #")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PO_REQ_LINE","Caption","Line")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PART","Caption","Part Number/Rev")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","ORIGINATOR","Caption","Originator")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","DATE_DUE","Caption","Due Date")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","AMOUNT","Caption","Amount")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","APPROVE","Caption","Approve*")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","NEXT_APPROVER","Caption","Next Approver")
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PO_REQ_NUMBER","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PO_REQ_LINE","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PART","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","ORIGINATOR","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","DATE_DUE","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","AMOUNT","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","APPROVE","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","NEXT_APPROVER","HeaderHAlignment","Center")
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PO_REQ_NUMBER","Width",50)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PO_REQ_LINE","Width",35)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PART","Width",140)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","ORIGINATOR","Width",61)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","DATE_DUE","Width",70)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","AMOUNT","Width",70)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","APPROVE","Width",60)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","NEXT_APPROVER","Width",87)
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PO_REQ_NUMBER","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PO_REQ_LINE","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PART","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","ORIGINATOR","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","DATE_DUE","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","AMOUNT","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","APPROVE","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","NEXT_APPROVER","AllowEdit",False)
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PO_REQ_NUMBER","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PO_REQ_LINE","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PART","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","ORIGINATOR","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","DATE_DUE","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","AMOUNT","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","APPROVE","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","NEXT_APPROVER","ReadOnly",True)
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PO_REQ_NUMBER","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PO_REQ_LINE","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","PART","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","ORIGINATOR","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","DATE_DUE","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","AMOUNT","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","APPROVE","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","NEXT_APPROVER","AllowFocus",False)
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","DATE_DUE","DisplayCustomDatetime","d")
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","AMOUNT","DisplayCustomNumeric","#.00")
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqHist","APPROVE","ToolTip","See bottom of window for color legend.")
+
+Gui.F_Req_Apprv.gsgcApprv.AddStyleFormatCondition("gvReqHist","APPROVE","ApprvY","Equal","Y")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqHist","APPROVE","ApprvY","BackColor","LightGreen")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqHist","APPROVE","ApprvY","ApplyToRow",True)
+Gui.F_Req_Apprv.gsgcApprv.AddStyleFormatCondition("gvReqHist","APPROVE","ApprvR","Equal","R")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqHist","APPROVE","ApprvR","BackColor","Pink")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqHist","APPROVE","ApprvR","ApplyToRow",True)
+Gui.F_Req_Apprv.gsgcApprv.AddStyleFormatCondition("gvReqHist","APPROVE","ApprvC","Equal","C")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqHist","APPROVE","ApprvC","BackColor","Silver")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqHist","APPROVE","ApprvC","ApplyToRow",True)
+Gui.F_Req_Apprv.gsgcApprv.AddStyleFormatCondition("gvReqHist","APPROVE","ApprvP","Equal","P")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqHist","APPROVE","ApprvP","BackColor","LightBlue")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqHist","APPROVE","ApprvP","ApplyToRow",True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.SetupReqHistoryGV.End
+
+Program.Sub.optActdReqs_Click.Start
+V.Local.sError.Declare
+V.Local.sDataTable.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Req_Apprv.gsgcApprv.GetFocusedGridview(V.Local.sDataTable)
+F.Intrinsic.Control.If(V.Screen.F_Req_Apprv!optActdReqs.Value,=,True,"and",V.Local.sDataTable.UCase,!=,"DTPURREQAPPRVHIST")
+	Gui.F_Req_Apprv.frameRadio.Enabled(False)
+	Gui.F_Req_Apprv.gsgcApprv.Visible(False)
+	Gui.F_Req_Apprv.gsgcApprv.MainView("gvReqHist")
+	Gui.F_Req_Apprv.gsgcApprv.Visible(True)
+	Gui.F_Req_Apprv.cmdApproveAll.Enabled(False)
+	Gui.F_Req_Apprv.gsgcApprv.SetFocus
+	Gui.F_Req_Apprv.frameRadio.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.optActdReqs_Click.End
+
+Program.Sub.optReqAction_Click.Start
+V.Local.sError.Declare
+V.Local.sDataTable.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Req_Apprv.gsgcApprv.GetFocusedGridview(V.Local.sDataTable)
+F.Intrinsic.Control.If(V.Screen.F_Req_Apprv!optReqAction.Value,=,True,"and",V.Local.sDataTable.UCase,!=,"DTPURREQAPPRVACT")
+	Gui.F_Req_Apprv.frameRadio.Enabled(False)
+	Gui.F_Req_Apprv.gsgcApprv.Visible(False)
+	Gui.F_Req_Apprv.gsgcApprv.MainView("gvReqActs")
+	Gui.F_Req_Apprv.gsgcApprv.Visible(True)
+	Gui.F_Req_Apprv.cmdApproveAll.Enabled(True)
+	Gui.F_Req_Apprv.gsgcApprv.SetFocus
+	Gui.F_Req_Apprv.frameRadio.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.optReqAction_Click.End
+
+Program.Sub.GetReqActions.Start
+V.Local.sError.Declare
+V.Local.sSQL.Declare
+V.Local.sGroups.Declare
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Intrinsic.String.Build("select ENG_GROUP from V_ENG_GROUP where USER_ID = '{0}';",V.Caller.User,V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sGroups)
+F.Intrinsic.String.Replace(V.Local.sGroups,"#$#","', '",V.Local.sGroups)
+F.Intrinsic.Control.If(V.Local.sGroups,=,"")
+	'User is not tied to approval groups
+	F.Intrinsic.String.Build("select USERID, DOLLAR_LIMIT from V_PURCH_REQ_APPRV where PRIMARY_APPROVER = '{0}';",V.Caller.User,V.Local.sSQL)
+F.Intrinsic.Control.Else
+	'User is tied to approval groups
+	F.Intrinsic.String.Build("select USERID, DOLLAR_LIMIT from V_PURCH_REQ_APPRV where PRIMARY_APPROVER in ('{0}', '{1}');",V.Caller.User,V.Local.sGroups,V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtUserApprv","con",V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtPurReqApprv","con","select distinct REQ_NUM as PO_REQ_NUMBER, LINE_NUM as PO_REQ_LINE, '>>> Req Total >>>>>>' as PART, REQ_AMT as AMOUNT, APPROVE from GCG_5688_POREQ_APPRV where APPROVE <> 'C' and APPROVE <> 'Y';")
+F.Data.DataTable.CreateFromSQL("dtReqHist","con","select REQ_NUM, max(cast(DATE_APPRV as char(10)) + cast(TIME_APPRV as char(8))) as TOP_TIME from GCG_5688_POREQ_APPRV group by REQ_NUM;")
+F.Data.DataTable.CreateFromSQL("dtReqHistUsers","con","select REQ_NUM, cast(DATE_APPRV as char(10)) + cast(TIME_APPRV as char(8)) as DATE_WITH_TIME, APPROVER, APPROVE from GCG_5688_POREQ_APPRV;")
+F.Data.DataTable.CreateFromSQL("dtPurReqs","con","select PO_REQ_NUMBER, PO_REQ_LINE, rtrim(PART) as PART, rtrim(LOCATION) as LOCATION, DATE_DUE, QUANTITY * UNIT_PRICE as AMOUNT, USERID_ORIGINATOR as ORIGINATOR from V_PURCHASE_REQS;")
+F.ODBC.Connection!con.Close
+
+F.Data.Linq.Join("LeftJoin","DataTable","dtReqHist*!*MAXTIME","DataTable","dtReqHistUsers*!*USERS","MAXTIME.REQ_NUM = USERS.REQ_NUM and MAXTIME.TOP_TIME = USERS.DATE_WITH_TIME","MAXTIME.REQ_NUM*!*USERS.APPROVER","USERS.APPROVE = 'P'",,,"dtLastApprover",False)
+F.Data.DataTable.Close("dtReqHist")
+F.Data.DataTable.Close("dtReqHistUsers")
+F.Data.Dictionary.CreateFromDataTable("dLastApprover","dtLastApprover","REQ_NUM","APPROVER")
+F.Data.DataTable.Close("dtLastApprover")
+
+F.Data.DataTable.AddColumn("dtPurReqApprv","LAST_APPROVER","String")
+F.Data.Dictionary.SetDefaultReturn("dLastApprover","*NONE*")
+F.Data.DataTable.FillFromDictionary("dtPurReqApprv","dLastApprover","PO_REQ_NUMBER","LAST_APPROVER")
+F.Data.Dictionary.Close("dLastApprover")
+
+F.Data.Linq.Join("InnerJoin","DataTable","dtPurReqApprv*!*HISTREQ","DataTable","dtUserApprv*!*USERLIMIT","HISTREQ.LAST_APPROVER = USERLIMIT.USERID","HISTREQ.PO_REQ_NUMBER*!*HISTREQ.PO_REQ_LINE*!*HISTREQ.PART*!*HISTREQ.AMOUNT*!*HISTREQ.LAST_APPROVER*!*USERLIMIT.DOLLAR_LIMIT",,,,"dtPurReqApprvActTot",False)
+F.Data.DataTable.Close("dtPurReqApprv")
+F.Data.DataTable.Close("dtUserApprv")
+
+F.Data.DataView.Create("dtPurReqApprvActTot","dvLimit")
+F.Data.DataView.SetFilter("dtPurReqApprvActTot","dvLimit","AMOUNT > DOLLAR_LIMIT")
+F.Data.DataView.ToDataTable("dtPurReqApprvActTot","dvLimit","dtPurReqApprvActTotFiltered")
+F.Data.DataTable.Close("dtPurReqApprvActTot")
+
+F.Data.Linq.Join("InnerJoin","DataTable","dtPurReqApprvActTotFiltered*!*ACTS","DataTable","dtPurReqs*!*REQS","ACTS.PO_REQ_NUMBER = REQS.PO_REQ_NUMBER","REQS.PO_REQ_NUMBER*!*REQS.PO_REQ_LINE*!*REQS.PART*!*REQS.LOCATION*!*REQS.ORIGINATOR*!*REQS.DATE_DUE*!*REQS.AMOUNT",,,,"dtPurReqsFilter",False)
+F.Data.DataTable.Close("dtPurReqs")
+
+F.Data.DataTable.Create("dtPurReqApprvAct",True)
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","PO_REQ_NUMBER","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","PO_REQ_LINE","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","PART","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","LOCATION","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","ORIGINATOR","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","DATE_DUE","Date")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","AMOUNT","Float")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","APPROVE","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","LAST_APPROVER","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","HIST","Long",0)
+
+F.Data.DataTable.Merge("dtPurReqsFilter","dtPurReqApprvAct",True,2)
+F.Data.DataTable.Merge("dtPurReqApprvActTotFiltered","dtPurReqApprvAct",True,2)
+
+F.Data.DataTable.Close("dtPurReqsFilter")
+F.Data.DataTable.Close("dtPurReqApprvActTotFiltered")
+
+F.Data.DataView.Create("dtPurReqApprvAct","dvOrdered",22,,"PO_REQ_NUMBER asc, PO_REQ_LINE asc")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.GetReqActions.End
+
+Program.Sub.SetupReqActionsGV.Start
+V.Local.sError.Declare
+V.Local.iApprove.Declare
+V.Local.iCnt.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Req_Apprv.gsgcApprv.AddGridviewFromDataview("gvReqActs","dtPurReqApprvAct","dvOrdered")
+
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","Multiselect",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","Editable",True)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","ReadOnly",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","AllowSort",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","AllowFilter",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","ShowDetailTabs",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","ShowGroupPanel",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","AllowAddRows",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","AllowDeleteRows",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","AllowColumnResizing",True)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","AllowColumnMoving",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","MultiSelectMode",2)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","EnableAppearanceOddRow",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","EnableAppearanceEvenRow",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","OptionsViewRowAutoHeight",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","ColumnPanelRowHeight",-1)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","OptionsMenuShowAutoFilterRowItem",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","EnterKeyNavigation",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","OptionsSelectionEnableAppearanceFocusedRow",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","OptionsFindAlwaysVisible",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","ActiveFilterString","")
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","OptionsViewShowAutoFilterRow",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","OptionsViewColumnAutoWidth",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","OptionsFilterUseNewCustomFilterDialog",False)
+Gui.F_Req_Apprv.gsgcApprv.SetGridviewProperty("gvReqActs","OptionsViewShowFilterPanelMode",False)
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","LOCATION","Visible",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","HIST","Visible",False)
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PO_REQ_NUMBER","Caption","Req #")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PO_REQ_LINE","Caption","Line")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PART","Caption","Part Number/Rev")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","ORIGINATOR","Caption","Originator")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","DATE_DUE","Caption","Due Date")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","AMOUNT","Caption","Amount")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","APPROVE","Caption","Approve*")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","LAST_APPROVER","Caption","Last Approver")
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PO_REQ_NUMBER","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PO_REQ_LINE","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PART","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","ORIGINATOR","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","DATE_DUE","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","AMOUNT","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","APPROVE","HeaderHAlignment","Center")
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","LAST_APPROVER","HeaderHAlignment","Center")
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PO_REQ_NUMBER","Width",50)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PO_REQ_LINE","Width",35)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PART","Width",140)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","ORIGINATOR","Width",61)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","DATE_DUE","Width",70)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","AMOUNT","Width",70)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","APPROVE","Width",60)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","LAST_APPROVER","Width",87)
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PO_REQ_NUMBER","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PO_REQ_LINE","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PART","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","ORIGINATOR","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","DATE_DUE","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","AMOUNT","AllowEdit",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","APPROVE","AllowEdit",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","LAST_APPROVER","AllowEdit",False)
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PO_REQ_NUMBER","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PO_REQ_LINE","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PART","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","ORIGINATOR","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","DATE_DUE","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","AMOUNT","ReadOnly",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","APPROVE","ReadOnly",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","LAST_APPROVER","ReadOnly",True)
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PO_REQ_NUMBER","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PO_REQ_LINE","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","PART","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","ORIGINATOR","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","DATE_DUE","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","AMOUNT","AllowFocus",False)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","APPROVE","AllowFocus",True)
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","LAST_APPROVER","AllowFocus",False)
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","DATE_DUE","DisplayCustomDatetime","d")
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","AMOUNT","DisplayCustomNumeric","#.00")
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","APPROVE","MaxLength",1)
+
+Gui.F_Req_Apprv.gsgcApprv.ColumnEdit("gvReqActs","APPROVE","DropDownList","*!*Y*!*R")
+
+Gui.F_Req_Apprv.gsgcApprv.SetColumnProperty("gvReqActs","APPROVE","ToolTip","See bottom of window for color legend.")
+
+Gui.F_Req_Apprv.gsgcApprv.GetColumnIndexByName("gvReqActs","APPROVE",V.Local.iApprove)
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtPurReqApprvAct.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtPurReqApprvAct(V.Local.iCnt).PART!FieldVal,!=,">>> Req Total >>>>>>")
+		Gui.F_Req_Apprv.gsgcApprv.SetCellProperty("gvReqActs",V.Local.iApprove,V.Local.iCnt,"Locked",True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+Gui.F_Req_Apprv.gsgcApprv.AddStyleFormatCondition("gvReqActs","APPROVE","ApprvY","Equal","Y")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqActs","APPROVE","ApprvY","BackColor","LightGreen")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqActs","APPROVE","ApprvY","ApplyToRow",True)
+Gui.F_Req_Apprv.gsgcApprv.AddStyleFormatCondition("gvReqActs","APPROVE","ApprvR","Equal","R")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqActs","APPROVE","ApprvR","BackColor","Pink")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqActs","APPROVE","ApprvR","ApplyToRow",True)
+Gui.F_Req_Apprv.gsgcApprv.AddStyleFormatCondition("gvReqActs","APPROVE","ApprvC","Equal","C")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqActs","APPROVE","ApprvC","BackColor","Silver")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqActs","APPROVE","ApprvC","ApplyToRow",True)
+Gui.F_Req_Apprv.gsgcApprv.AddStyleFormatCondition("gvReqActs","APPROVE","ApprvP","Equal","P")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqActs","APPROVE","ApprvP","BackColor","LightBlue")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqActs","APPROVE","ApprvP","ApplyToRow",True)
+Gui.F_Req_Apprv.gsgcApprv.AddStyleFormatCondition("gvReqActs","PART","ApprvLine","Equal",">>> Req Total >>>>>>")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqActs","PART","ApprvLine","BackColor","LightYellow")
+Gui.F_Req_Apprv.gsgcApprv.SetStyleFormatConditionProperty("gvReqActs","PART","ApprvLine","ApplyToRow",True)
+
+Gui.F_Req_Apprv.gsgcApprv.MainView("gvReqActs")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.SetupReqActionsGV.End
+
+Program.Sub.gsgcApprv_CellValueChanged.Start
+V.Local.sError.Declare
+V.Local.sDataTable.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Req_Apprv.gsgcApprv.GetFocusedGridview(V.Local.sDataTable)
+F.Intrinsic.Control.If(V.Local.sDataTable.UCase,=,"DTPURREQAPPRVACT","and",V.Args.Column.UCase,=,"APPROVE",V.DataTable.[V.Local.sDataTable](V.Args.RowIndex).PART!FieldVal,=,">>> Req Total >>>>>>")
+	F.Intrinsic.Control.SelectCase(V.Args.Value.UCase)
+		F.Intrinsic.Control.CaseAny("Y","R")
+			F.Data.DataTable.SetValue(V.Local.sDataTable,V.Args.RowIndex,V.Args.Column,V.Args.Value.UCase)
+		F.Intrinsic.Control.CaseElse
+			F.Data.DataTable.SetValue(V.Local.sDataTable,V.Args.RowIndex,V.Args.Column,"")
+	F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.Else
+	F.Data.DataTable.SetValue(V.Local.sDataTable,V.Args.RowIndex,V.Args.Column,"")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.gsgcApprv_CellValueChanged.End
+
+Program.Sub.cmdApproveAll_Click.Start
+V.Local.sError.Declare
+F.Intrinsic.Control.Try
+
+F.Data.DataView.Create("dtPurReqApprvAct","dvTot")
+F.Data.DataView.SetFilter("dtPurReqApprvAct","dvTot","PART = '>>> Req Total >>>>>>'")
+F.Data.DataView.SetValue("dtPurReqApprvAct","dvTot",-1,"APPROVE","Y")
+F.Data.DataView.Close("dtPurReqApprvAct","dvTot")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdApproveAll_Click.End
+
+Program.Sub.cmdOK_Click.Start
+V.Local.sError.Declare
+V.Local.sSQL.Declare
+V.Local.sUser.Declare
+V.Local.sSubject.Declare
+V.Local.sBody.Declare
+V.Local.fLimit.Declare
+V.Local.iCnt.Declare
+V.Local.iLine.Declare
+V.Local.iUser.Declare
+V.Local.bPassChk.Declare
+F.Intrinsic.Control.Try
+
+F.Data.DataView.Create("dtPurReqApprvAct","dvApproved")
+F.Data.DataView.SetFilter("dtPurReqApprvAct","dvApproved","APPROVE = 'Y' or APPROVE = 'R'")
+F.Intrinsic.Control.If(V.DataView.dtPurReqApprvAct!dvApproved.RowCount,=,0)
+	F.Data.DataView.Close("dtPurReqApprvAct","dvApproved")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Ask for user password to continue
+Gui.F_Req_Apprv..Enabled(False)
+Gui.F_Password..Show
+Gui.F_Password.txtPswrd.SetFocus
+Gui.F_Password..WaitForDismiss
+
+F.Global.Security.ValidateUser(V.Screen.F_Password!txtPswrd.Text.Trim,V.Local.bPassChk)
+F.Intrinsic.Control.If(V.Screen.F_Password!txtPswrd.Text.Trim,=,"")
+	Gui.F_Password.txtPswrd.Text("")
+	F.Data.DataView.Close("dtPurReqApprvAct","dvApproved")
+	Gui.F_Req_Apprv..Enabled(True)
+	Gui.F_Req_Apprv..SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.ElseIf(V.Local.bPassChk.Not)
+	F.Intrinsic.UI.Msgbox("Incorrect Password")
+	Gui.F_Password.txtPswrd.Text("")
+	F.Data.DataView.Close("dtPurReqApprvAct","dvApproved")
+	Gui.F_Req_Apprv..Enabled(True)
+	Gui.F_Req_Apprv..SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+Gui.F_Password.txtPswrd.Text("")
+
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Intrinsic.String.Build("select DOLLAR_LIMIT from V_PURCH_REQ_APPRV where USERID = '{0}';",V.Caller.User,V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.fLimit)
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataView.dtPurReqApprvAct!dvApproved.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).APPROVE!FieldVal,=,"Y","and",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).AMOUNT!FieldVal,>,V.Local.fLimit)
+		'Purchase Req exceeds user's limit, flag the purchase req as pending and email the next user for approval
+		F.Intrinsic.String.Build("delete from GCG_5688_POREQ_APPRV where REQ_NUM = '{0}' and LINE_NUM = '{1}' and APPROVER = '{2}';",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_LINE!FieldVal,V.Caller.User,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.String.Build("insert into GCG_5688_POREQ_APPRV (REQ_NUM, LINE_NUM, DATE_APPRV, TIME_APPRV, APPROVER, DOLLAR_LIMIT, REQ_AMT, APPROVE) values ('{0}','{1}', CURDATE(), CURTIME(), '{2}', {3}, {4}, 'P')",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_LINE!FieldVal,V.Caller.User,V.Local.fLimit.String,V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).AMOUNT!FieldVal,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		
+		F.Intrinsic.String.Build("select PRIMARY_APPROVER, APPROVER_TYPE from V_PURCH_REQ_APPRV where USERID = '{0}';",V.Caller.User,V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sUser)
+		F.Intrinsic.String.Split(V.Local.sUser,"*!*",V.Local.sUser)
+		F.Intrinsic.String.Build("PO Requisition {0} is Awaiting Your Approval",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Local.sSubject)
+		F.Intrinsic.String.Build("select PO_REQ_LINE, rtrim(PART) as PART, rtrim(LOCATION) as LOCN, rtrim(DESCRIPTION) as DESCR, rtrim(VENDOR) as VEND, DATE_DUE, QUANTITY as QTY, rtrim(UM) as UM, UNIT_PRICE, QUANTITY * UNIT_PRICE as TOTAL, rtrim(USERID_ORIGINATOR) as ORIG from V_PURCHASE_REQS where PO_REQ_NUMBER = '{0}';",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Local.sSQL)
+		F.Data.DataTable.CreateFromSQL("dtTemp","con",V.Local.sSQL)
+		F.Intrinsic.String.Build("User {0} has approved PO Requisition {1}, but their dollar limit is below the PO Requisition's total. Here is the information about the lines:{2}",V.Caller.User,V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Ambient.NewLine,V.Local.sBody)
+		
+		F.Intrinsic.Control.For(V.Local.iLine,0,V.DataTable.dtTemp.RowCount--,1)
+			F.Intrinsic.String.Build("{0}{1}Line: {2}{3}Part: {4}{3}Locn: {5}{3}Desc: {6}{3}Vendor: {7}{3}Due Date: {8}{3}Qty: {9}{3}UM: {10}{3}Unit Price: {11}{3}Originator: {12}",V.Local.sBody,V.Ambient.NewLine,V.DataTable.dtTemp(V.Local.iLine).PO_REQ_LINE!FieldVal,V.Ambient.Tab,V.DataTable.dtTemp(V.Local.iLine).PART!FieldVal,V.DataTable.dtTemp(V.Local.iLine).LOCN!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DESCR!FieldVal,V.DataTable.dtTemp(V.Local.iLine).VEND!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DATE_DUE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).QTY!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UM!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UNIT_PRICE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).ORIG!FieldVal,V.Local.sBody)
+		F.Intrinsic.Control.Next(V.Local.iLine)
+		F.Data.DataTable.Close("dtTemp")
+		
+		F.Intrinsic.String.Build("{0}{1}{1}This Purchase Requisition is ready to be approved by you at Purchasing > Transactions > Requisition Approval.{1}{1}",V.Local.sBody,V.Ambient.NewLine,V.Global.sEmailSig,V.Local.sBody)
+		F.Intrinsic.Control.If(V.Local.sUser(1),=,"G")
+			'Approver is a group
+			V.Local.sUser.RedimPreserve(0,0)
+			F.Global.Security.GetGroupMembers(V.Local.sUser,V.Local.sUser)
+			
+			F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sUser,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+			V.Local.sUser.Redim(0,0)
+		F.Intrinsic.Control.Else
+			'Approver is a user
+			V.Local.sUser.RedimPreserve(0,0)
+			F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sUser,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).APPROVE!FieldVal,=,"Y","and",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).AMOUNT!FieldVal,<=,V.Local.fLimit)
+		'Purchase Req is within user limit and is ready to be sent to Automated purchasing
+		F.Intrinsic.String.Build("delete from GCG_5688_POREQ_APPRV where REQ_NUM = '{0}' and (APPROVE = 'C' or APPROVE = 'R');",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.String.Build("insert into GCG_5688_POREQ_APPRV (REQ_NUM, LINE_NUM, DATE_APPRV, TIME_APPRV, APPROVER, DOLLAR_LIMIT, REQ_AMT, APPROVE) values ('{0}','{1}', CURDATE(), CURTIME(), '{2}', {3}, {4}, 'P')",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_LINE!FieldVal,V.Caller.User,V.Local.fLimit.String,V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).AMOUNT!FieldVal,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.String.Build("update GCG_5688_POREQ_APPRV set APPROVE = 'Y' where REQ_NUM = '{0}';",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.String.Build("update PURCHASE_REQS set USER_APPROVAL = '{1}' where PO_REQ_NUMBER = '{0}';",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Caller.User,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		
+		F.Global.Security.GetGroupMembers("AUTOPRCH",V.Local.sUser)
+		F.Intrinsic.String.Build("PO Requisition {0} Has Been Approved for Purchasing",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Local.sSubject)
+		F.Intrinsic.String.Build("select PO_REQ_LINE, rtrim(PART) as PART, rtrim(LOCATION) as LOCN, rtrim(DESCRIPTION) as DESCR, rtrim(VENDOR) as VEND, DATE_DUE, QUANTITY as QTY, rtrim(UM) as UM, UNIT_PRICE, QUANTITY * UNIT_PRICE as TOTAL, rtrim(USERID_ORIGINATOR) as ORIG from V_PURCHASE_REQS where PO_REQ_NUMBER = '{0}';",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Local.sSQL)
+		F.Data.DataTable.CreateFromSQL("dtTemp","con",V.Local.sSQL)
+		F.Intrinsic.String.Build("User {0} has approved PO Requisition {1}. Here is the information about the lines:{2}",V.Caller.User,V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Ambient.NewLine,V.Local.sBody)
+		
+		F.Intrinsic.Control.For(V.Local.iLine,0,V.DataTable.dtTemp.RowCount--,1)
+			F.Intrinsic.String.Build("{0}{1}Line: {2}{3}Part: {4}{3}Locn: {5}{3}Desc: {6}{3}Vendor: {7}{3}Due Date: {8}{3}Qty: {9}{3}UM: {10}{3}Unit Price: {11}{3}Originator: {12}",V.Local.sBody,V.Ambient.NewLine,V.DataTable.dtTemp(V.Local.iLine).PO_REQ_LINE!FieldVal,V.Ambient.Tab,V.DataTable.dtTemp(V.Local.iLine).PART!FieldVal,V.DataTable.dtTemp(V.Local.iLine).LOCN!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DESCR!FieldVal,V.DataTable.dtTemp(V.Local.iLine).VEND!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DATE_DUE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).QTY!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UM!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UNIT_PRICE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).ORIG!FieldVal,V.Local.sBody)
+		F.Intrinsic.Control.Next(V.Local.iLine)
+		F.Data.DataTable.Close("dtTemp")
+		
+		F.Intrinsic.String.Build("{0}{1}{1}This Purchase Requisition is ready to be processed at Purchasing > Transactions > Automated Purchasing.{1}{1}",V.Local.sBody,V.Ambient.NewLine,V.Global.sEmailSig,V.Local.sBody)
+		F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sUser,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+	F.Intrinsic.Control.ElseIf(V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).APPROVE!FieldVal,=,"R")
+		'Purchase Req has been rejected, prompt user to enter an explanation to be sent to the originator. Also reset approval of purchase Req
+		F.Intrinsic.String.Build("delete from GCG_5688_POREQ_APPRV where REQ_NUM = '{0}' and LINE_NUM = '{1}' and APPROVER = '{2}';",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_LINE!FieldVal,V.Caller.User,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.String.Build("insert into GCG_5688_POREQ_APPRV (REQ_NUM, LINE_NUM, DATE_APPRV, TIME_APPRV, APPROVER, DOLLAR_LIMIT, REQ_AMT, APPROVE) values ('{0}','{1}', CURDATE(), CURTIME(), '{2}', {3}, {4}, 'P')",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_LINE!FieldVal,V.Caller.User,V.Local.fLimit.String,V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).AMOUNT!FieldVal,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.String.Build("update GCG_5688_POREQ_APPRV set APPROVE = 'R' where REQ_NUM = '{0}';",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		
+		F.Intrinsic.String.Build("PO Req: {0}",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Local.sSQL)
+		Gui.F_Rej_Why.lblReqNum.Text(V.Local.sSQL)
+		F.Intrinsic.String.Build("Line: {0}",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_LINE!FieldVal,V.Local.sSQL)
+		Gui.F_Rej_Why.lblLine.Text(V.Local.sSQL)
+		
+		Gui.F_Rej_Why..Show
+		Gui.F_Rej_Why..WaitForDismiss
+		
+		F.Intrinsic.String.Build("PO Requisition {0} Has Been Rejected",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Local.sSubject)
+		F.Intrinsic.String.Build("select PO_REQ_LINE, rtrim(PART) as PART, rtrim(LOCATION) as LOCN, rtrim(DESCRIPTION) as DESCR, rtrim(VENDOR) as VEND, DATE_DUE, QUANTITY as QTY, rtrim(UM) as UM, UNIT_PRICE, QUANTITY * UNIT_PRICE as TOTAL, rtrim(USERID_ORIGINATOR) as ORIG from V_PURCHASE_REQS where PO_REQ_NUMBER = '{0}';",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Local.sSQL)
+		F.Data.DataTable.CreateFromSQL("dtTemp","con",V.Local.sSQL)
+		F.Intrinsic.String.Build("User {0} has rejected PO Requisition {1}. Here is the information about the lines:{2}",V.Caller.User,V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Ambient.NewLine,V.Local.sBody)
+		V.Local.sUser.Set(V.DataTable.dtTemp(0).ORIG!FieldVal)
+		
+		F.Intrinsic.Control.For(V.Local.iLine,0,V.DataTable.dtTemp.RowCount--,1)
+			F.Intrinsic.String.Build("{0}{1}Line: {2}{3}Part: {4}{3}Locn: {5}{3}Desc: {6}{3}Vendor: {7}{3}Due Date: {8}{3}Qty: {9}{3}UM: {10}{3}Unit Price: {11}{3}Originator: {12}",V.Local.sBody,V.Ambient.NewLine,V.DataTable.dtTemp(V.Local.iLine).PO_REQ_LINE!FieldVal,V.Ambient.Tab,V.DataTable.dtTemp(V.Local.iLine).PART!FieldVal,V.DataTable.dtTemp(V.Local.iLine).LOCN!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DESCR!FieldVal,V.DataTable.dtTemp(V.Local.iLine).VEND!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DATE_DUE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).QTY!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UM!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UNIT_PRICE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).ORIG!FieldVal,V.Local.sBody)
+		F.Intrinsic.Control.Next(V.Local.iLine)
+		F.Data.DataTable.Close("dtTemp")
+		
+		F.Intrinsic.String.Build("{0}{1}{1}User submitted reason:{1}{1}{2}{3}{2}",V.Local.sBody,V.Ambient.NewLine,V.Ambient.DblQuote,V.Global.sRejReason,V.Local.sBody)
+		
+		F.Intrinsic.String.Build("{0}{1}{1}This Purchase Requisition needs to be edited at Purchasing > File > Purchase Requisitions > Open.{1}{1}",V.Local.sBody,V.Ambient.NewLine,V.Global.sEmailSig,V.Local.sBody)
+		F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sUser,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+F.ODBC.Connection!con.Close
+
+F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+
+Gui.F_Req_Apprv..Enabled(True)
+Gui.F_Req_Apprv..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdOK_Click.End
+
+Program.Sub.cmdNotes_Click.Start
+V.Local.sError.Declare
+V.Local.sDataTable.Declare
+V.Local.sRow.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Req_Apprv..Enabled(False)
+
+Gui.F_Req_Apprv.gsgcApprv.GetFocusedGridview(V.Local.sDataTable)
+Gui.F_Req_Apprv.gsgcApprv.GetSelectedRowsInFocus(V.Local.sRow)
+F.Intrinsic.Control.If(V.DataTable.[V.Local.sDataTable].RowCount--,<,V.Local.sRow.Long)
+	Gui.F_Req_Apprv..Enabled(True)
+	Gui.F_Req_Apprv..SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+Gui.F_Req_Apprv_Notes.txtReqNum.Text(V.DataTable.[V.Local.sDataTable](V.Local.sRow.Long).PO_REQ_NUMBER!FieldVal)
+Gui.F_Req_Apprv_Notes.txtLine.Text(V.DataTable.[V.Local.sDataTable](V.Local.sRow.Long).PO_REQ_LINE!FieldVal)
+Gui.F_Req_Apprv_Notes.txtPart.Text(V.DataTable.[V.Local.sDataTable](V.Local.sRow.Long).PART!FieldVal)
+Gui.F_Req_Apprv_Notes.txtLocn.Text(V.DataTable.[V.Local.sDataTable](V.Local.sRow.Long).LOCATION!FieldVal)
+
+F.Intrinsic.Control.CallSub(LoadNotes,"DataTable",V.Local.sDataTable,"Row",V.Local.sRow.Long)
+
+Gui.F_Req_Apprv_Notes..Show
+
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdNotes_Click.End
+
+Program.Sub.cmdRefresh_Click.Start
+V.Local.sError.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Req_Apprv..Visible(False)
+
+F.Data.DataTable.Close("dtPurReqApprvAct")
+F.Data.DataTable.Close("dtPurReqApprvHist")
+
+F.Intrinsic.Control.If(V.Screen.F_Req_Apprv!chkOverride.CheckedAsBoolean)
+	F.Intrinsic.Control.CallSub(GetReqActionsAll)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(GetReqActions)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.CallSub(SetupReqActionsGV)
+F.Intrinsic.Control.CallSub(GetReqHistory)
+F.Intrinsic.Control.CallSub(SetupReqHistoryGV)
+
+Gui.F_Req_Apprv.optReqAction.Value(1)
+Gui.F_Req_Apprv.cmdApproveAll.Enabled(True)
+
+F.Intrinsic.Control.BlockEvents
+Gui.F_Req_Apprv..Show
+F.Intrinsic.Control.UnBlockEvents
+Gui.F_Req_Apprv.gsgcApprv.SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.F_Req_Apprv_Notes_UnLoad.Start
+V.Local.sError.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Req_Apprv_Notes..Visible(False)
+
+F.Data.DataTable.Close("dtNotes")
+
+Gui.F_Req_Apprv..Enabled(True)
+Gui.F_Req_Apprv..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Req_Apprv_Notes_UnLoad.End
+
+Program.Sub.gsgcNotes_RowClick.Start
+V.Local.sError.Declare
+V.Local.sTime.Declare
+V.Local.dDate.Declare
+V.Local.dTime.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Args.Clicks,=,1,"or",V.Args.Button.UCase,!=,"LEFT")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Global.bAdmin.Not)
+	F.Intrinsic.Control.If(V.DataTable.dtNotes(V.Args.RowIndex).APPROVER!FieldVal,!=,V.Caller.User.Trim)
+		'Open in View Mode
+		Gui.F_New_Notes.txtText.Locked(True)
+		Gui.F_New_Notes.cmdSave.Enabled(False)
+		Gui.F_New_Notes.cmdClear.Enabled(False)
+		Gui.F_New_Notes..Caption("View Notes")
+	F.Intrinsic.Control.Else
+		'Open in Edit Mode
+		Gui.F_New_Notes..Caption("Edit Notes")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	'Open in Edit Mode
+	Gui.F_New_Notes..Caption("Edit Notes (Admin)")
+F.Intrinsic.Control.EndIf
+
+Gui.F_Req_Apprv_Notes..Visible(False)
+
+V.Local.dDate.Set(V.DataTable.dtNotes(V.Args.RowIndex).DATE_NOTES!FieldVal)
+V.Local.dTime.Set(V.DataTable.dtNotes(V.Args.RowIndex).TIME_NOTES!FieldVal)
+Gui.F_New_Notes.txtReqNum.Text(V.Screen.F_Req_Apprv_Notes!txtReqNum.Text)
+Gui.F_New_Notes.txtLine.Text(V.Screen.F_Req_Apprv_Notes!txtLine.Text)
+Gui.F_New_Notes.txtDate.Text(V.Local.dDate.FormatM/D/YYYY)
+F.Intrinsic.String.Format(V.Local.dTime,"H:NN:SS AMPM",V.Local.sTime)
+Gui.F_New_Notes.txtTime.Text(V.Local.sTime)
+Gui.F_New_Notes.txtUser.Text(V.DataTable.dtNotes(V.Args.RowIndex).APPROVER!FieldVal)
+Gui.F_New_Notes.txtText.Text(V.DataTable.dtNotes(V.Args.RowIndex).TEXT!FieldVal)
+Gui.F_New_Notes.txtRowNum.Text(V.Args.RowIndex)
+
+Gui.F_New_Notes..Show
+
+Gui.F_New_Notes.txtText.SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.gsgcNotes_RowClick.End
+
+Program.Sub.LoadNotes.Start
+'V.Args.DataTable, V.Args.Row
+V.Local.sError.Declare
+V.Local.sSQL.Declare
+V.Local.iVisibleIndex.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.Build("select REQ_NUM as PO_REQ_NUMBER, LINE_NUM as PO_REQ_LINE, DATE_NOTES, TIME_NOTES, rtrim(APPROVER) as APPROVER, TEXT from GCG_5688_APPRV_NOTES where REQ_NUM = '{0}' and LINE_NUM = '{1}' order by DATE_NOTES, TIME_NOTES, APPROVER;",V.Screen.F_Req_Apprv_Notes!txtReqNum.Text,V.Screen.F_Req_Apprv_Notes!txtLine.Text,V.Local.sSQL)
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Data.DataTable.CreateFromSQL("dtNotes","con",V.Local.sSQL,True)
+F.ODBC.Connection!con.Close
+
+Gui.F_Req_Apprv_Notes.gsgcNotes.AddGridviewFromDatatable("gvNotes","dtNotes")
+
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","Multiselect",False)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","Editable",False)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","ReadOnly",True)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","AllowSort",False)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","AllowFilter",False)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","ShowDetailTabs",False)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","ShowGroupPanel",False)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","AllowAddRows",False)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","AllowDeleteRows",False)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","AllowColumnResizing",True)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","AllowColumnMoving",False)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","EnableAppearanceOddRow",False)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","EnableAppearanceEvenRow",False)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","OptionsViewRowAutoHeight",False)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","ColumnPanelRowHeight",-1)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","OptionsMenuShowAutoFilterRowItem",False)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","EnterKeyNavigation",True)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","OptionsSelectionEnableAppearanceFocusedRow",False)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","OptionsFindAlwaysVisible",False)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","ActiveFilterString","")
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","OptionsViewShowAutoFilterRow",False)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","OptionsViewColumnAutoWidth",False)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","OptionsFilterUseNewCustomFilterDialog",False)
+'Gui.F_Req_Apprv_Notes.gsgcNotes.SetGridviewProperty("gvNotes","OptionsViewShowFilterPanelMode",False)
+
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","PO_REQ_NUMBER","Visible",False)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","PO_REQ_LINE","Visible",False)
+
+V.Local.iVisibleIndex.Set(-1)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","APPROVER","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","DATE_NOTES","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","TIME_NOTES","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","TEXT","VisibleIndex",V.Local.iVisibleIndex.++)
+
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","APPROVER","Caption","User-Id")
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","DATE_NOTES","Caption","Date")
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","TIME_NOTES","Caption","Time")
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","TEXT","Caption","Note Text")
+
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","APPROVER","HeaderHAlignment","Center")
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","DATE_NOTES","HeaderHAlignment","Center")
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","TIME_NOTES","HeaderHAlignment","Center")
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","TEXT","HeaderHAlignment","Center")
+
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","APPROVER","Width",55)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","DATE_NOTES","Width",70)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","TIME_NOTES","Width",60)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","TEXT","Width",233)
+
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","APPROVER","AllowFocus",False)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","DATE_NOTES","AllowFocus",False)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","TIME_NOTES","AllowFocus",False)
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","TEXT","AllowFocus",False)
+
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","DATE_NOTES","DisplayCustomDatetime","d")
+
+Gui.F_Req_Apprv_Notes.gsgcNotes.SetColumnProperty("gvNotes","TIME_NOTES","DisplayCustomDatetime","t")
+
+Gui.F_Req_Apprv_Notes.gsgcNotes.MainView("gvNotes")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadNotes.End
+
+Program.Sub.cmdDelete_Click.Start
+V.Local.sError.Declare
+V.Local.sFilter.Declare
+V.Local.sRows.Declare
+V.Local.sSQL.Declare
+V.Local.sDate.Declare
+V.Local.sTime.Declare
+V.Local.dDate.Declare
+V.Local.dTime.Declare
+V.Local.iRow.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.Build("DATE_NOTES < #{0}#",V.Screen.F_Req_Apprv_Notes!dtpDelete.Value,V.Local.sFilter)
+F.Data.DataTable.Select("dtNotes",V.Local.sFilter,V.Local.sRows)
+F.Intrinsic.Control.If(V.Local.sRows.IsNotNoReturn)
+	F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.Intrinsic.Control.For(V.Local.iRow,V.Local.sRows.UBound,0,-1)
+		V.Local.dDate.Set(V.DataTable.dtNotes(V.Local.iRow).DATE_NOTES!FieldVal)
+		V.Local.dTime.Set(V.DataTable.dtNotes(V.Local.iRow).TIME_NOTES!FieldVal)
+		F.Intrinsic.String.Format(V.Local.dDate,"YYYY-MM-DD HH:NN:SS",V.Local.sDate)
+		F.Intrinsic.String.Format(V.Local.dTime,"YYYY-MM-DD HH:NN:SS",V.Local.sTime)
+		F.Intrinsic.String.Build("delete from GCG_5688_APPRV_NOTES where REQ_NUM = '{0}' and LINE_NUM = '{1}' and DATE_NOTES = '{2}' and TIME_NOTES = '{3}' and APPROVER = '{4}';",V.Screen.F_Req_Apprv_Notes!txtReqNum.Text,V.Screen.F_Req_Apprv_Notes!txtLine.Text,V.Local.sDate,V.Local.sTime,V.DataTable.dtNotes(V.Local.iRow).APPROVER!FieldVal,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Data.DataTable.DeleteRow("dtNotes",V.Local.iRow)
+	F.Intrinsic.Control.Next(V.Local.iRow)
+	F.ODBC.Connection!con.Close
+	F.Data.DataTable.AcceptChanges("dtNotes")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDelete_Click.End
+
+Program.Sub.cmdAddNew_Click.Start
+V.Local.sError.Declare
+V.Local.sTime.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Req_Apprv_Notes..Visible(False)
+
+Gui.F_New_Notes..Caption("New Notes")
+Gui.F_New_Notes.txtReqNum.Text(V.Screen.F_Req_Apprv_Notes!txtReqNum.Text)
+Gui.F_New_Notes.txtLine.Text(V.Screen.F_Req_Apprv_Notes!txtLine.Text)
+Gui.F_New_Notes.txtDate.Text(V.Ambient.Date.FormatM/D/YYYY)
+F.Intrinsic.String.Format(V.Ambient.Time,"H:NN:SS AMPM",V.Local.sTime)
+Gui.F_New_Notes.txtTime.Text(V.Local.sTime)
+Gui.F_New_Notes.txtUser.Text(V.Caller.User)
+Gui.F_New_Notes.txtText.Text("")
+
+Gui.F_New_Notes..Show
+
+Gui.F_New_Notes.txtText.SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdAddNew_Click.End
+
+Program.Sub.F_New_Notes_UnLoad.Start
+V.Local.sError.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_New_Notes..Visible(False)
+
+Gui.F_Req_Apprv_Notes..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.F_New_Notes_UnLoad.End
+
+Program.Sub.cmdSave_Click.Start
+V.Local.sError.Declare
+V.Local.sDate.Declare
+V.Local.sTime.Declare
+V.Local.sSQL.Declare
+V.Local.sNotes.Declare
+V.Local.dDate.Declare
+V.Local.dTime.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_New_Notes!txtText.Text.Trim,=,"")
+	Gui.F_New_Notes.txtText.Text("")
+	Gui.F_New_Notes.txtText.SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+Gui.F_New_Notes..Visible(False)
+V.Local.sNotes.Set(V.Screen.F_New_Notes!txtText.Text.Trim)
+F.Intrinsic.Control.If(V.Screen.F_New_Notes.Caption,=,"New Notes")
+	V.Local.dDate.Set(V.Screen.F_New_Notes!txtDate.Text)
+	V.Local.dTime.Set(V.Screen.F_New_Notes!txtTime.Text)
+	F.Data.DataTable.AddRow("dtNotes","PO_REQ_NUMBER",V.Screen.F_New_Notes!txtReqNum.Text,"PO_REQ_LINE",V.Screen.F_New_Notes!txtLine.Text,"DATE_NOTES",V.Local.dDate,"TIME_NOTES",V.Local.dTime.FormatHH:NN:SS,"APPROVER",V.Screen.F_New_Notes!txtUser.Text,"TEXT",V.Screen.F_New_Notes!txtText.Text.Trim)
+	F.Intrinsic.String.Format(V.Local.dDate,"YYYY-MM-DD HH:NN:SS",V.Local.sDate)
+	F.Intrinsic.String.Format(V.Local.dTime,"YYYY-MM-DD HH:NN:SS",V.Local.sTime)
+	F.Intrinsic.String.Build("insert into GCG_5688_APPRV_NOTES (REQ_NUM, LINE_NUM, DATE_NOTES, TIME_NOTES, APPROVER, TEXT) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')",V.Screen.F_New_Notes!txtReqNum.Text,V.Screen.F_New_Notes!txtLine.Text,V.Local.sDate,V.Local.sTime,V.Screen.F_New_Notes!txtUser.Text,V.Local.sNotes.PSQLFriendly,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.Else
+	F.Data.DataTable.SetValue("dtNotes",V.Screen.F_New_Notes!txtRowNum.Text,"TEXT",V.Screen.F_New_Notes!txtText.Text.Trim)
+	
+	V.Local.dDate.Set(V.DataTable.dtNotes(V.Screen.F_New_Notes!txtRowNum.Text).DATE_NOTES!FieldVal)
+	V.Local.dTime.Set(V.DataTable.dtNotes(V.Screen.F_New_Notes!txtRowNum.Text).TIME_NOTES!FieldVal)
+	F.Intrinsic.String.Format(V.Local.dDate,"YYYY-MM-DD HH:NN:SS",V.Local.sDate)
+	F.Intrinsic.String.Format(V.Local.dTime,"YYYY-MM-DD HH:NN:SS",V.Local.sTime)
+	
+	F.Intrinsic.String.Build("update GCG_5688_APPRV_NOTES set TEXT = '{5}' where REQ_NUM = '{0}' and LINE_NUM = '{1}' and DATE_NOTES = '{2}' and TIME_NOTES = '{3}' and APPROVER = '{4}';",V.Screen.F_New_Notes!txtReqNum.Text,V.Screen.F_New_Notes!txtLine.Text,V.Local.sDate,V.Local.sTime,V.Screen.F_New_Notes!txtUser.Text,V.Local.sNotes.PSQLFriendly,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.EndIf
+Gui.F_Req_Apprv_Notes..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.cmdClear_Click.Start
+V.Local.sError.Declare
+V.Local.sTime.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_New_Notes.txtText.Text("")
+Gui.F_New_Notes.txtDate.Text(V.Ambient.Date.FormatM/D/YYYY)
+F.Intrinsic.String.Format(V.Ambient.Time,"H:NN:SS AMPM",V.Local.sTime)
+Gui.F_New_Notes.txtTime.Text(V.Local.sTime)
+Gui.F_New_Notes.txtText.SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdClear_Click.End
+
+Program.Sub.chkOverride_Click.Start
+V.Local.sError.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Req_Apprv!chkOverride.CheckedAsBoolean)
+	Gui.F_Req_Apprv.cmdRefresh.SetFocus
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.chkOverride_Click.End
+
+Program.Sub.GetReqActionsAll.Start
+V.Local.sError.Declare
+V.Local.sUser.Declare
+V.Local.sFilter.Declare
+V.Local.sGroupFilter.Declare
+V.Local.sSQL.Declare
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Data.DataTable.CreateFromSQL("dtPOApprovers","con","select rtrim(USERID) as USERID, DOLLAR_LIMIT, rtrim(PRIMARY_APPROVER) as PRIMARY_APPROVER, APPROVER_TYPE from V_PURCH_REQ_APPRV;",True)
+F.Data.DataTable.CreateFromSQL("dtPOApproverGroups","con","select rtrim(A.USERID) as USERID, B.ENG_GROUP from V_PURCH_REQ_APPRV A inner join V_ENG_GROUP B on A.USERID = B.USER_ID;",True)
+F.ODBC.Connection!con.Close
+F.Data.DataView.Create("dtPOApprovers","dvUser")
+F.Data.DataView.Create("dtPOApproverGroups","dvUser")
+
+'Current User is top of List, find all users below them in the approval hierarchy
+V.Local.sUser.Set(V.Caller.User.Trim)
+V.Global.sUserList.Set(V.Local.sUser)
+F.Intrinsic.String.Build("{0} (You)",V.Local.sUser,V.Local.sFilter)
+
+Gui.F_Approvers.trvAppr.Enabled(True)
+Gui.F_Approvers.trvAppr.ClearItems
+Gui.F_Approvers.trvAppr.AddNode("",,V.Local.sUser,V.Local.sFilter)
+
+'Start recursion from the highest level in the current tree
+F.Intrinsic.String.Build("PRIMARY_APPROVER = '{0}'",V.Local.sUser,V.Local.sFilter)
+F.Data.DataView.SetFilter("dtPOApprovers","dvUser",V.Local.sFilter)
+F.Intrinsic.String.Build("USERID = '{0}'",V.Local.sUser,V.Local.sGroupFilter)
+F.Data.DataView.SetFilter("dtPOApproverGroups","dvUser",V.Local.sGroupFilter)
+F.Intrinsic.Control.CallSub(ApproverRecursion,"Originator","NO ORIGINATOR","ResetFilter",V.Local.sFilter,"ResetGroupFilter",V.Local.sGroupFilter,"BuildKey",V.Local.sUser)
+
+F.Data.DataTable.Close("dtPOApprovers")
+F.Data.DataTable.Close("dtPOApproverGroups")
+
+F.Intrinsic.String.Replace(V.Global.sUserList,"*!*","', '",V.Local.sUser)
+F.Intrinsic.String.Build("select USERID, DOLLAR_LIMIT from V_PURCH_REQ_APPRV where PRIMARY_APPROVER in ('{0}');",V.Local.sUser,V.Local.sSQL)
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Data.DataTable.CreateFromSQL("dtUserApprv","con",V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtPurReqApprv","con","select distinct REQ_NUM as PO_REQ_NUMBER, LINE_NUM as PO_REQ_LINE, '>>> Req Total >>>>>>' as PART, REQ_AMT as AMOUNT, APPROVE from GCG_5688_POREQ_APPRV where APPROVE <> 'C' and APPROVE <> 'Y';")
+F.Data.DataTable.CreateFromSQL("dtReqHist","con","select REQ_NUM, max(cast(DATE_APPRV as char(10)) + cast(TIME_APPRV as char(8))) as TOP_TIME from GCG_5688_POREQ_APPRV group by REQ_NUM;")
+F.Data.DataTable.CreateFromSQL("dtReqHistUsers","con","select REQ_NUM, cast(DATE_APPRV as char(10)) + cast(TIME_APPRV as char(8)) as DATE_WITH_TIME, APPROVER, APPROVE from GCG_5688_POREQ_APPRV;")
+F.Data.DataTable.CreateFromSQL("dtPurReqs","con","select PO_REQ_NUMBER, PO_REQ_LINE, rtrim(PART) as PART, rtrim(LOCATION) as LOCATION, DATE_DUE, QUANTITY * UNIT_PRICE as AMOUNT, USERID_ORIGINATOR as ORIGINATOR from V_PURCHASE_REQS;")
+F.ODBC.Connection!con.Close
+
+F.Data.Linq.Join("LeftJoin","DataTable","dtReqHist*!*MAXTIME","DataTable","dtReqHistUsers*!*USERS","MAXTIME.REQ_NUM = USERS.REQ_NUM and MAXTIME.TOP_TIME = USERS.DATE_WITH_TIME","MAXTIME.REQ_NUM*!*USERS.APPROVER","USERS.APPROVE = 'P'",,,"dtLastApprover",False)
+F.Data.DataTable.Close("dtReqHist")
+F.Data.DataTable.Close("dtReqHistUsers")
+F.Data.Dictionary.CreateFromDataTable("dLastApprover","dtLastApprover","REQ_NUM","APPROVER")
+F.Data.DataTable.Close("dtLastApprover")
+
+F.Data.DataTable.AddColumn("dtPurReqApprv","LAST_APPROVER","String")
+F.Data.Dictionary.SetDefaultReturn("dLastApprover","*NONE*")
+F.Data.DataTable.FillFromDictionary("dtPurReqApprv","dLastApprover","PO_REQ_NUMBER","LAST_APPROVER")
+F.Data.Dictionary.Close("dLastApprover")
+
+F.Data.Linq.Join("InnerJoin","DataTable","dtPurReqApprv*!*HISTREQ","DataTable","dtUserApprv*!*USERLIMIT","HISTREQ.LAST_APPROVER = USERLIMIT.USERID","HISTREQ.PO_REQ_NUMBER*!*HISTREQ.PO_REQ_LINE*!*HISTREQ.PART*!*HISTREQ.AMOUNT*!*HISTREQ.LAST_APPROVER*!*USERLIMIT.DOLLAR_LIMIT",,,,"dtPurReqApprvActTot",False)
+F.Data.DataTable.Close("dtPurReqApprv")
+F.Data.DataTable.Close("dtUserApprv")
+
+F.Data.DataView.Create("dtPurReqApprvActTot","dvLimit")
+F.Data.DataView.SetFilter("dtPurReqApprvActTot","dvLimit","AMOUNT > DOLLAR_LIMIT")
+F.Data.DataView.ToDataTable("dtPurReqApprvActTot","dvLimit","dtPurReqApprvActTotFiltered")
+F.Data.DataTable.Close("dtPurReqApprvActTot")
+
+F.Data.Linq.Join("InnerJoin","DataTable","dtPurReqApprvActTotFiltered*!*ACTS","DataTable","dtPurReqs*!*REQS","ACTS.PO_REQ_NUMBER = REQS.PO_REQ_NUMBER","REQS.PO_REQ_NUMBER*!*REQS.PO_REQ_LINE*!*REQS.PART*!*REQS.LOCATION*!*REQS.ORIGINATOR*!*REQS.DATE_DUE*!*REQS.AMOUNT",,,,"dtPurReqsFilter",False)
+F.Data.DataTable.Close("dtPurReqs")
+
+F.Data.DataTable.Create("dtPurReqApprvAct",True)
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","PO_REQ_NUMBER","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","PO_REQ_LINE","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","PART","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","LOCATION","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","ORIGINATOR","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","DATE_DUE","Date")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","AMOUNT","Float")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","APPROVE","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","LAST_APPROVER","String")
+F.Data.DataTable.AddColumn("dtPurReqApprvAct","HIST","Long",0)
+
+F.Data.DataTable.Merge("dtPurReqsFilter","dtPurReqApprvAct",True,2)
+F.Data.DataTable.Merge("dtPurReqApprvActTotFiltered","dtPurReqApprvAct",True,2)
+
+F.Data.DataTable.Close("dtPurReqsFilter")
+F.Data.DataTable.Close("dtPurReqApprvActTotFiltered")
+
+F.Data.DataView.Create("dtPurReqApprvAct","dvOrdered",22,,"PO_REQ_NUMBER asc, PO_REQ_LINE asc")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.GetReqActionsAll.End
+
+Program.Sub.F_Password_UnLoad.Start
+V.Local.sError.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Password.txtPswrd.Text("")
+
+Gui.F_Password..Visible(False)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Password_UnLoad.End
+
+Program.Sub.cmdPswrdOK_Click.Start
+V.Local.sError.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Password!txtPswrd.Text.Trim,=,"")
+	Gui.F_Password.txtPswrd.Text("A")
+F.Intrinsic.Control.EndIf
+
+Gui.F_Password..Visible(False)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdPswrdOK_Click.End
+
+Program.Sub.ClearApproval.Start
+'V.Args.ReqNum
+V.Local.sError.Declare
+V.Local.sSQL.Declare
+V.Local.sUsers.Declare
+V.Local.sAutoPrchUsers.Declare
+V.Local.sBody.Declare
+V.Local.sSubject.Declare
+V.Local.sName.Declare
+F.Intrinsic.Control.Try
+
+'Clear approval steps of current Requisition
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Intrinsic.String.Build("select APPROVER from GCG_5688_POREQ_APPRV where REQ_NUM = '{0}' and APPROVER <> '{1}';",V.Args.ReqNum,V.Caller.User,V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sUsers)
+F.Intrinsic.String.Build("delete from GCG_5688_POREQ_APPRV where REQ_NUM = '{0}';",V.Args.ReqNum,V.Local.sSQL)
+F.ODBC.Connection!con.Execute(V.Local.sSQL)
+F.ODBC.Connection!con.Close
+
+F.Intrinsic.String.Build("PO Requisition {0} Deleted",V.Caller.User,V.Local.sSubject)
+
+F.Intrinsic.Control.If(V.Local.sUsers,!=,"")
+	F.Intrinsic.String.Replace(V.Local.sUsers,"#$#","*!*",V.Local.sUsers)
+	F.Intrinsic.String.Build("PO Requisition {2} has been deleted by user {3}.{1}{1}You have previously approved/rejected this requisiton so you are being notified of its deletion.{1}{1}{4}",V.Local.sName,V.Ambient.NewLine,V.Args.ReqNum,V.Caller.User,V.Global.sEmailSig,V.Local.sBody)
+	F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sUsers,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+F.Intrinsic.Control.EndIf
+
+F.Global.Security.GetGroupMembers("AUTOPRCH",V.Local.sAutoPrchUsers)
+F.Intrinsic.Control.If(V.Local.sAutoPrchUsers)
+	F.Intrinsic.String.Build("PO Requisition {2} has been deleted by user {3}.{1}{1}It has been removed from the Auto Purchasing module.{1}{1}{4}",V.Local.sName,V.Ambient.NewLine,V.Args.ReqNum,V.Caller.User,V.Global.sEmailSig,V.Local.sBody)
+	F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sAutoPrchUsers,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.ClearApproval.End
+
+Program.Sub.StartApproval.Start
+'V.Args.ReqNum, V.Args.Orig
+V.Local.sError.Declare
+V.Local.sSQL.Declare
+V.Local.sUser.Declare
+V.Local.sSubject.Declare
+V.Local.sBody.Declare
+V.Local.iUser.Declare
+V.Local.iLine.Declare
+V.Local.fLimit.Declare
+V.Local.fAmt.Declare
+F.Intrinsic.Control.Try
+
+'Add a record to the DB approval list for originator
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Intrinsic.String.Build("select DOLLAR_LIMIT from V_PURCH_REQ_APPRV where USERID = '{0}';",V.Args.Orig,V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.fLimit)
+F.Intrinsic.String.Build("select QUANTITY * UNIT_PRICE as AMOUNT from V_PURCHASE_REQS where PO_REQ_NUMBER = '{0}';",V.Args.ReqNum,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtReqAmount","con",V.Local.sSQL)
+F.Data.DataTable.Compute("dtReqAmount","SUM(AMOUNT)",,V.Local.fAmt)
+F.Intrinsic.Math.Round(V.Local.fAmt,2,V.Local.fAmt)
+F.Intrinsic.Control.If(V.Local.fAmt,>,V.Local.fLimit)
+	'Check for if the PO Req is really low. Sometimes PO reqs are made where the lines total 1 cent and they will change it later. This allows the
+	F.Intrinsic.String.Build("insert into GCG_5688_POREQ_APPRV (REQ_NUM, LINE_NUM, DATE_APPRV, TIME_APPRV, APPROVER, DOLLAR_LIMIT, REQ_AMT, APPROVE) values ('{0}','{1}', CURDATE(), CURTIME(), '{2}', {3}, {4}, 'P')",V.Args.ReqNum,"TOT",V.Args.Orig,V.Local.fLimit,V.Local.fAmt,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+	F.Intrinsic.String.Build("select PRIMARY_APPROVER, APPROVER_TYPE from V_PURCH_REQ_APPRV where USERID = '{0}';",V.Args.Orig,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sUser)
+	F.Intrinsic.String.Build("PO Requisition {0} is Awaiting Your Approval",V.Args.ReqNum,V.Local.sSubject)
+	F.Intrinsic.String.Build("select PO_REQ_LINE, rtrim(PART) as PART, rtrim(LOCATION) as LOCN, rtrim(DESCRIPTION) as DESCR, rtrim(VENDOR) as VEND, DATE_DUE, QUANTITY as QTY, rtrim(UM) as UM, UNIT_PRICE, QUANTITY * UNIT_PRICE as TOTAL, rtrim(USERID_ORIGINATOR) as ORIG from V_PURCHASE_REQS where PO_REQ_NUMBER = '{0}';",V.Args.ReqNum,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtTemp","con",V.Local.sSQL)
+	F.Intrinsic.String.Build("User {0} has approved PO Requisition {1}, but their dollar limit is below the PO Requisition's total. Here is the information about the lines:{2}",V.Args.Orig,V.Args.ReqNum,V.Ambient.NewLine,V.Local.sBody)
+	
+	F.Intrinsic.Control.For(V.Local.iLine,0,V.DataTable.dtTemp.RowCount--,1)
+		F.Intrinsic.String.Build("{0}{1}Line: {2}{3}Part: {4}{3}Locn: {5}{3}Desc: {6}{3}Vendor: {7}{3}Due Date: {8}{3}Qty: {9}{3}UM: {10}{3}Unit Price: {11}{3}Originator: {12}",V.Local.sBody,V.Ambient.NewLine,V.DataTable.dtTemp(V.Local.iLine).PO_REQ_LINE!FieldVal,V.Ambient.Tab,V.DataTable.dtTemp(V.Local.iLine).PART!FieldVal,V.DataTable.dtTemp(V.Local.iLine).LOCN!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DESCR!FieldVal,V.DataTable.dtTemp(V.Local.iLine).VEND!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DATE_DUE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).QTY!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UM!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UNIT_PRICE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).ORIG!FieldVal,V.Local.sBody)
+	F.Intrinsic.Control.Next(V.Local.iLine)
+	F.Data.DataTable.Close("dtTemp")
+	
+	F.Intrinsic.String.Build("{0}{1}{1}This Purchase Requisition is ready to be approved by you at Purchasing > Transactions > Requisition Approval.{1}{1}{2}",V.Local.sBody,V.Ambient.NewLine,V.Global.sEmailSig,V.Local.sBody)
+	F.Intrinsic.String.Split(V.Local.sUser,"*!*",V.Local.sUser)
+	F.Intrinsic.Control.If(V.Local.sUser(1),=,"G")
+		V.Local.sUser.RedimPreserve(0,0)
+		F.Global.Security.GetGroupMembers(V.Local.sUser,V.Local.sUser)
+		F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sUser,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+		V.Local.sUser.Redim(0,0)
+	F.Intrinsic.Control.Else
+		V.Local.sUser.RedimPreserve(0,0)
+		F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sUser,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Local.fAmt,>,1,and,V.Local.fAmt,<=,V.Local.fLimit)
+	'PO Req is below limit and not below $1 so it can be auto approved for Auto PO
+	F.Intrinsic.String.Build("delete from GCG_5688_POREQ_APPRV where REQ_NUM = '{0}';",V.DataView.dtPurReqApprvAct!dvApproved(V.Local.iCnt).PO_REQ_NUMBER!FieldVal,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.String.Build("insert into GCG_5688_POREQ_APPRV (REQ_NUM, LINE_NUM, DATE_APPRV, TIME_APPRV, APPROVER, DOLLAR_LIMIT, REQ_AMT, APPROVE) values ('{0}','{1}', CURDATE(), CURTIME(), '{2}', {3}, {4}, 'Y')",V.Args.ReqNum,"TOT",V.Args.Orig,V.Local.fLimit,V.Local.fAmt,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.String.Build("update PURCHASE_REQS set USER_APPROVAL = '{0}' where PO_REQ_NUMBER = '{1}';",V.Args.Orig,V.Args.ReqNum,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+	F.Global.Security.GetGroupMembers("AUTOPRCH",V.Local.sUser)
+	F.Intrinsic.String.Build("PO Requisition {0} Has Been Approved for Purchasing",V.Args.ReqNum,V.Local.sSubject)
+	F.Intrinsic.String.Build("select PO_REQ_LINE, rtrim(PART) as PART, rtrim(LOCATION) as LOCN, rtrim(DESCRIPTION) as DESCR, rtrim(VENDOR) as VEND, DATE_DUE, QUANTITY as QTY, rtrim(UM) as UM, UNIT_PRICE, QUANTITY * UNIT_PRICE as TOTAL, rtrim(USERID_ORIGINATOR) as ORIG from V_PURCHASE_REQS where PO_REQ_NUMBER = '{0}';",V.Args.ReqNum,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtTemp","con",V.Local.sSQL)
+	F.Intrinsic.String.Build("User {0} has approved PO Requisition {1}. Here is the information about the lines:{2}",V.Args.Orig,V.Args.ReqNum,V.Ambient.NewLine,V.Local.sBody)
+	
+	F.Intrinsic.Control.For(V.Local.iLine,0,V.DataTable.dtTemp.RowCount--,1)
+		F.Intrinsic.String.Build("{0}{1}Line: {2}{3}Part: {4}{3}Locn: {5}{3}Desc: {6}{3}Vendor: {7}{3}Due Date: {8}{3}Qty: {9}{3}UM: {10}{3}Unit Price: {11}{3}Originator: {12}",V.Local.sBody,V.Ambient.NewLine,V.DataTable.dtTemp(V.Local.iLine).PO_REQ_LINE!FieldVal,V.Ambient.Tab,V.DataTable.dtTemp(V.Local.iLine).PART!FieldVal,V.DataTable.dtTemp(V.Local.iLine).LOCN!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DESCR!FieldVal,V.DataTable.dtTemp(V.Local.iLine).VEND!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DATE_DUE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).QTY!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UM!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UNIT_PRICE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).ORIG!FieldVal,V.Local.sBody)
+	F.Intrinsic.Control.Next(V.Local.iLine)
+	F.Data.DataTable.Close("dtTemp")
+	
+	F.Intrinsic.String.Build("{0}{1}{1}This Purchase Requisition is ready to be processed at Purchasing > Transactions > Automated Purchasing.{1}{1}{2}",V.Local.sBody,V.Ambient.NewLine,V.Global.sEmailSig,V.Local.sBody)
+	F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sUser,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!con.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.StartApproval.End
+
+Program.Sub.ResetApproval.Start
+'V.Args.ReqNum, V.Args.Orig
+V.Local.sError.Declare
+V.Local.sSQL.Declare
+V.Local.sUsers.Declare
+V.Local.sAutoPrchUsers.Declare
+V.Local.sUser.Declare
+V.Local.sSubject.Declare
+V.Local.sBody.Declare
+V.Local.iUser.Declare
+V.Local.iLine.Declare
+V.Local.fLimit.Declare
+V.Local.fAmt.Declare
+F.Intrinsic.Control.Try
+
+'Change all currently approved users to C and start approval again
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Intrinsic.String.Build("select PRIMARY_APPROVER, APPROVER_TYPE from V_PURCH_REQ_APPRV where USERID = '{0}';",V.Caller.User,V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sUser)
+F.Intrinsic.String.Split(V.Local.sUser,"*!*",V.Local.sUser)
+F.Intrinsic.Control.If(V.Local.sUser(1),=,"G")
+	V.Local.sUser.RedimPreserve(0,0)
+	F.Global.Security.GetGroupMembers(V.Local.sUser,V.Local.sUser)
+	F.Intrinsic.String.Replace(V.Local.sUser,"*!*","', '",V.Local.sUser)
+	F.Intrinsic.String.Build("select APPROVER from GCG_5688_POREQ_APPRV where REQ_NUM = '{0}' and APPROVER not in ('{1}', '{2}', '{3}');",V.Args.ReqNum,V.Caller.User,V.Local.sUser,V.Local.sSQL)
+	F.Intrinsic.String.Split(V.Local.sUser,"', '",V.Local.sUser)
+F.Intrinsic.Control.Else
+	V.Local.sUser.RedimPreserve(0,0)
+	F.Intrinsic.String.Build("select APPROVER from GCG_5688_POREQ_APPRV where REQ_NUM = '{0}' and APPROVER <> '{1}' and APPROVER <> '{2}';",V.Args.ReqNum,V.Caller.User,V.Local.sUser,V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sUsers)
+F.Intrinsic.String.Build("delete from GCG_5688_POREQ_APPRV where REQ_NUM = '{0}' and APPROVER = '{1}';",V.Args.ReqNum,V.Caller.User,V.Local.sSQL)
+F.ODBC.Connection!con.Execute(V.Local.sSQL)
+F.Intrinsic.String.Build("update GCG_5688_POREQ_APPRV set APPROVE = 'C' where REQ_NUM = '{0}';",V.Args.ReqNum,V.Local.sSQL)
+F.ODBC.Connection!con.Execute(V.Local.sSQL)
+F.Intrinsic.String.Build("select DOLLAR_LIMIT from V_PURCH_REQ_APPRV where USERID = '{0}';",V.Caller.User,V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.fLimit)
+F.Intrinsic.String.Build("select QUANTITY * UNIT_PRICE as AMOUNT from V_PURCHASE_REQS where PO_REQ_NUMBER = '{0}';",V.Args.ReqNum,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtReqAmount","con",V.Local.sSQL)
+F.Data.DataTable.Compute("dtReqAmount","SUM(AMOUNT)",,V.Local.fAmt)
+F.Intrinsic.Math.Round(V.Local.fAmt,2,V.Local.fAmt)
+F.Intrinsic.Control.If(V.Local.fAmt,>,V.Local.fLimit)
+	'Check for if the PO Req is really low. Sometimes PO reqs are made where the lines total 1 cent and they will change it later. This allows the
+	F.Intrinsic.String.Build("delete from GCG_5688_POREQ_APPRV where REQ_NUM = '{0}' and LINE_NUM = '{1}' and APPROVER = '{2}';",V.Args.ReqNum,"TOT",V.Caller.User,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.String.Build("insert into GCG_5688_POREQ_APPRV (REQ_NUM, LINE_NUM, DATE_APPRV, TIME_APPRV, APPROVER, DOLLAR_LIMIT, REQ_AMT, APPROVE) values ('{0}','{1}', CURDATE(), CURTIME(), '{2}', {3}, {4}, 'P')",V.Args.ReqNum,"TOT",V.Caller.User,V.Local.fLimit,V.Local.fAmt,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+	F.Intrinsic.String.Build("select USER_APPROVAL from PURCHASE_REQS where PO_REQ_NUMBER = '{0}';",V.Args.ReqNum,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+	F.Intrinsic.Control.If(V.Local.sSQL.Trim,!=,"")
+		'The PO Req has been sent to Auto Purchasing, email the AUTOPRCH group and cancel it
+		F.Intrinsic.String.Build("update PURCHASE_REQS set USER_APPROVAL = '' where PO_REQ_NUMBER = '{0}';",V.Args.ReqNum,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		
+		F.Global.Security.GetGroupMembers("AUTOPRCH",V.Local.sAutoPrchUsers)
+		F.Intrinsic.String.Build("PO Requisition {0} Has Been Removed from Auto Purchasing",V.Args.ReqNum,V.Local.sSubject)
+		F.Intrinsic.String.Build("User {0} has made changes to PO Requisition {1}, and their dollar limit is less than than the total amount of the PO Requisition.",V.Caller.User,V.Args.ReqNum,V.Local.sBody)
+		F.Intrinsic.String.Build("{0}{1}{1}This Purchase Requisition will be removed from Automated Purchasing.{1}{1}{2}",V.Local.sBody,V.Ambient.NewLine,V.Global.sEmailSig,V.Local.sBody)
+		
+		F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sAutoPrchUsers,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("PO Requisition {0} Has Been Updated",V.Args.ReqNum,V.Local.sSubject)
+	F.Intrinsic.String.Build("select PO_REQ_LINE, rtrim(PART) as PART, rtrim(LOCATION) as LOCN, rtrim(DESCRIPTION) as DESCR, rtrim(VENDOR) as VEND, DATE_DUE, QUANTITY as QTY, rtrim(UM) as UM, UNIT_PRICE, QUANTITY * UNIT_PRICE as TOTAL, rtrim(USERID_ORIGINATOR) as ORIG from V_PURCHASE_REQS where PO_REQ_NUMBER = '{0}';",V.Args.ReqNum,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtTemp","con",V.Local.sSQL)
+	F.Intrinsic.String.Build("User {0} has made changes to PO Requisition {1}, but their dollar limit is below the PO Requisition's total. Here is the information about the lines:{2}",V.Caller.User,V.Args.ReqNum,V.Ambient.NewLine,V.Local.sBody)
+	
+	F.Intrinsic.Control.For(V.Local.iLine,0,V.DataTable.dtTemp.RowCount--,1)
+		F.Intrinsic.String.Build("{0}{1}Line: {2}{3}Part: {4}{3}Locn: {5}{3}Desc: {6}{3}Vendor: {7}{3}Due Date: {8}{3}Qty: {9}{3}UM: {10}{3}Unit Price: {11}{3}Originator: {12}",V.Local.sBody,V.Ambient.NewLine,V.DataTable.dtTemp(V.Local.iLine).PO_REQ_LINE!FieldVal,V.Ambient.Tab,V.DataTable.dtTemp(V.Local.iLine).PART!FieldVal,V.DataTable.dtTemp(V.Local.iLine).LOCN!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DESCR!FieldVal,V.DataTable.dtTemp(V.Local.iLine).VEND!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DATE_DUE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).QTY!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UM!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UNIT_PRICE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).ORIG!FieldVal,V.Local.sBody)
+	F.Intrinsic.Control.Next(V.Local.iLine)
+	
+	F.Intrinsic.String.Build("{0}{1}{1}This Purchase Requisition will be restarting its approval process.{1}{1}{2}",V.Local.sBody,V.Ambient.NewLine,V.Global.sEmailSig,V.Local.sBody)
+	F.Intrinsic.String.Replace(V.Local.sUsers,"#$#","*!*",V.Local.sUsers)
+	F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sUsers,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+	
+	F.Intrinsic.String.Build("PO Requisition {0} Has Been Updated",V.Args.ReqNum,V.Local.sSubject)
+	F.Intrinsic.String.Build("User {0} has made changes to PO Requisition {1}, but their dollar limit is below the PO Requisition's total. Here is the information about the lines:{2}",V.Caller.User,V.Args.ReqNum,V.Ambient.NewLine,V.Local.sBody)
+	
+	F.Intrinsic.Control.For(V.Local.iLine,0,V.DataTable.dtTemp.RowCount--,1)
+		F.Intrinsic.String.Build("{0}{1}Line: {2}{3}Part: {4}{3}Locn: {5}{3}Desc: {6}{3}Vendor: {7}{3}Due Date: {8}{3}Qty: {9}{3}UM: {10}{3}Unit Price: {11}{3}Originator: {12}",V.Local.sBody,V.Ambient.NewLine,V.DataTable.dtTemp(V.Local.iLine).PO_REQ_LINE!FieldVal,V.Ambient.Tab,V.DataTable.dtTemp(V.Local.iLine).PART!FieldVal,V.DataTable.dtTemp(V.Local.iLine).LOCN!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DESCR!FieldVal,V.DataTable.dtTemp(V.Local.iLine).VEND!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DATE_DUE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).QTY!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UM!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UNIT_PRICE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).ORIG!FieldVal,V.Local.sBody)
+	F.Intrinsic.Control.Next(V.Local.iLine)
+	F.Data.DataTable.Close("dtTemp")
+	
+	F.Intrinsic.String.Build("{0}{1}{1}This Purchase Requisition is ready to be approved by you at Purchasing > Transactions > Requisition Approval.{1}{1}{2}",V.Local.sBody,V.Ambient.NewLine,V.Global.sEmailSig,V.Local.sBody)
+	F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sUser,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+F.Intrinsic.Control.ElseIf(V.Local.fAmt,>,1,and,V.Local.fAmt,<=,V.Local.fLimit)
+	'PO Req is below limit and not below $1 so it can be auto approved for Auto PO
+	F.Intrinsic.String.Build("delete from GCG_5688_POREQ_APPRV where REQ_NUM = '{0}';",V.Args.ReqNum,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.String.Build("insert into GCG_5688_POREQ_APPRV (REQ_NUM, LINE_NUM, DATE_APPRV, TIME_APPRV, APPROVER, DOLLAR_LIMIT, REQ_AMT, APPROVE) values ('{0}','{1}', CURDATE(), CURTIME(), '{2}', {3}, {4}, 'Y')",V.Args.ReqNum,"TOT",V.Caller.User,V.Local.fLimit,V.Local.fAmt,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.String.Build("update PURCHASE_REQS set USER_APPROVAL = '{0}' where PO_REQ_NUMBER = '{1}';",V.Caller.User,V.Args.ReqNum,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+	F.Intrinsic.String.Build("PO Requisition {0} Has Been Updated",V.Args.ReqNum,V.Local.sSubject)
+	F.Intrinsic.String.Build("select PO_REQ_LINE, rtrim(PART) as PART, rtrim(LOCATION) as LOCN, rtrim(DESCRIPTION) as DESCR, rtrim(VENDOR) as VEND, DATE_DUE, QUANTITY as QTY, rtrim(UM) as UM, UNIT_PRICE, QUANTITY * UNIT_PRICE as TOTAL, rtrim(USERID_ORIGINATOR) as ORIG from V_PURCHASE_REQS where PO_REQ_NUMBER = '{0}';",V.Args.ReqNum,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtTemp","con",V.Local.sSQL)
+	F.Intrinsic.String.Build("User {0} has made changes to PO Requisition {1}, and their dollar limit is greater than the total amount of the PO Requisition. Here is the information about the lines:{2}",V.Caller.User,V.Args.ReqNum,V.Ambient.NewLine,V.Local.sBody)
+	
+	F.Intrinsic.Control.For(V.Local.iLine,0,V.DataTable.dtTemp.RowCount--,1)
+		F.Intrinsic.String.Build("{0}{1}Line: {2}{3}Part: {4}{3}Locn: {5}{3}Desc: {6}{3}Vendor: {7}{3}Due Date: {8}{3}Qty: {9}{3}UM: {10}{3}Unit Price: {11}{3}Originator: {12}",V.Local.sBody,V.Ambient.NewLine,V.DataTable.dtTemp(V.Local.iLine).PO_REQ_LINE!FieldVal,V.Ambient.Tab,V.DataTable.dtTemp(V.Local.iLine).PART!FieldVal,V.DataTable.dtTemp(V.Local.iLine).LOCN!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DESCR!FieldVal,V.DataTable.dtTemp(V.Local.iLine).VEND!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DATE_DUE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).QTY!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UM!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UNIT_PRICE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).ORIG!FieldVal,V.Local.sBody)
+	F.Intrinsic.Control.Next(V.Local.iLine)
+	
+	F.Intrinsic.String.Build("{0}{1}{1}This Purchase Requisition will be moved to Automated Purchasing.{1}{1}{2}",V.Local.sBody,V.Ambient.NewLine,V.Global.sEmailSig,V.Local.sBody)
+	F.Intrinsic.String.Replace(V.Local.sUsers,"#$#","*!*",V.Local.sUsers)
+	F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sUsers,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+	
+	V.Local.sUser.Redim(0,0)
+	F.Global.Security.GetGroupMembers("AUTOPRCH",V.Local.sUser)
+	F.Intrinsic.String.Build("PO Requisition {0} Has Been Approved for Purchasing",V.Args.ReqNum,V.Local.sSubject)
+	F.Intrinsic.String.Build("select PO_REQ_LINE, rtrim(PART) as PART, rtrim(LOCATION) as LOCN, rtrim(DESCRIPTION) as DESCR, rtrim(VENDOR) as VEND, DATE_DUE, QUANTITY as QTY, rtrim(UM) as UM, UNIT_PRICE, QUANTITY * UNIT_PRICE as TOTAL, rtrim(USERID_ORIGINATOR) as ORIG from V_PURCHASE_REQS where PO_REQ_NUMBER = '{0}';",V.Args.ReqNum,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtTemp","con",V.Local.sSQL)
+	F.Intrinsic.String.Build("User {0} has approved PO Requisition {1}. Here is the information about the lines:{2}",V.Args.Orig,V.Args.ReqNum,V.Ambient.NewLine,V.Local.sBody)
+	
+	F.Intrinsic.Control.For(V.Local.iLine,0,V.DataTable.dtTemp.RowCount--,1)
+		F.Intrinsic.String.Build("{0}{1}Line: {2}{3}Part: {4}{3}Locn: {5}{3}Desc: {6}{3}Vendor: {7}{3}Due Date: {8}{3}Qty: {9}{3}UM: {10}{3}Unit Price: {11}{3}Originator: {12}",V.Local.sBody,V.Ambient.NewLine,V.DataTable.dtTemp(V.Local.iLine).PO_REQ_LINE!FieldVal,V.Ambient.Tab,V.DataTable.dtTemp(V.Local.iLine).PART!FieldVal,V.DataTable.dtTemp(V.Local.iLine).LOCN!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DESCR!FieldVal,V.DataTable.dtTemp(V.Local.iLine).VEND!FieldVal,V.DataTable.dtTemp(V.Local.iLine).DATE_DUE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).QTY!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UM!FieldVal,V.DataTable.dtTemp(V.Local.iLine).UNIT_PRICE!FieldVal,V.DataTable.dtTemp(V.Local.iLine).ORIG!FieldVal,V.Local.sBody)
+	F.Intrinsic.Control.Next(V.Local.iLine)
+	F.Data.DataTable.Close("dtTemp")
+	
+	F.Intrinsic.String.Build("{0}{1}{1}This Purchase Requisition is ready to be processed at Purchasing > Transactions > Automated Purchasing.{1}{1}{2}",V.Local.sBody,V.Ambient.NewLine,V.Global.sEmailSig,V.Local.sBody)
+	F.Intrinsic.Control.CallSub(EmailNotif,"User",V.Local.sUser,"Subject",V.Local.sSubject,"Body",V.Local.sBody)
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!con.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.ResetApproval.End
+
+Program.Sub.OpenSubApprvTree.Start
+V.Local.sError.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Approvers!trvAppr.Enabled.Not)
+	Gui.F_Req_Apprv.chkOverride.Value(1)
+	
+	F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+F.Intrinsic.Control.EndIf
+
+Gui.F_Req_Apprv..Enabled(False)
+
+Gui.F_Approvers..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.OpenSubApprvTree.End
+
+Program.Sub.EmailNotif.Start
+'V.Args.User, V.Args.Subject, V.Args.Body
+V.Local.sError.Declare
+V.Local.sSQL.Declare
+V.Local.sSender.Declare
+V.Local.sRecipient.Declare
+V.Local.iUserID.Declare
+V.Local.iCnt.Declare
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!conx.OpenCommonConnection
+F.Intrinsic.String.Build("select top 1 GS_USER from USER_INFORMATION where MENU_TYPE = 3 and ((COMPANY_SPECIFIC = 1 and COMPANY = '{0}') or COMPANY_SPECIFIC = 0) and ENABLED = 1;",V.Caller.CompanyCode,V.Local.sSQL)
+F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sSender)
+F.ODBC.Connection!conx.Close
+
+F.Global.Security.GetUserId(V.Local.sSender,V.Caller.CompanyCode,V.Local.iUserID)
+F.Global.Security.GetUserEmail(V.Local.sSender,V.Local.sSender)
+F.Intrinsic.Control.If(V.Local.sSender.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("No sender email setup for online update user. Please notify a system administrator.","Cancelling Email Module")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("{0}*!*",V.Local.sSender,V.Local.sSender)
+
+F.Intrinsic.String.Split(V.Args.User,"*!*",V.Local.sRecipient)
+F.Intrinsic.Control.If(V.Local.sRecipient.UBound,>,0)
+	'More than one user was passed
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sRecipient,1)
+		F.Global.Security.GetUserEmail(V.Local.sRecipient(V.Local.iCnt),V.Local.sRecipient)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	F.Intrinsic.String.Join(V.Local.sRecipient,"@!@*!*",V.Local.sRecipient)
+	V.Local.sRecipient.RedimPreserve(0,0)
+F.Intrinsic.Control.Else
+	F.Global.Security.GetUserEmail(V.Local.sRecipient,V.Local.sRecipient)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("*!*{0}",V.Local.sRecipient,V.Local.sRecipient)
+
+F.Global.Messaging.QueueMessage(V.Caller.CompanyCode,V.Local.iUserID,"GCG_5688",V.Args.Subject,V.Local.sSender,V.Local.sRecipient,V.Args.Body)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.EmailNotif.End
+
+Program.Sub.cmdSubmit_Click.Start
+V.Local.sError.Declare
+V.Local.sWhy.Declare
+F.Intrinsic.Control.Try
+
+V.Global.sRejReason.Set(V.Screen.F_Rej_Why!txtRejReason.Text.Trim)
+F.Intrinsic.Control.If(V.Global.sRejReason.Length,<,10)
+	F.Intrinsic.String.Build("This rejection needs a more detailed reason. Please write in{0}more detail or add more detail.",V.Ambient.NewLine,V.Local.sWhy)
+	Gui.F_Rej_Why.lblWhy.Caption(V.Local.sWhy)
+	Gui.F_Rej_Why.lblWhy.Visible(True)
+	Gui.F_Rej_Why.txtRejReason.SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+Gui.F_Rej_Why..Visible(False)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSubmit_Click.End
+
+Program.Sub.DeleteNotes.Start
+V.Local.sError.Declare
+V.Local.sRows.Declare
+V.Local.sSQL.Declare
+V.Local.sDate.Declare
+V.Local.iRow.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Req_Apprv_Notes.gsgcNotes.GetSelectedRows("gvNotes",V.Local.sRows)
+
+F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Intrinsic.Control.For(V.Local.iRow,V.Local.sRows.UBound,0,-1)
+	F.Intrinsic.String.Format(V.DataTable.dtNotes(V.Local.sRows(V.Local.iRow)).DATE_NOTES!FieldVal,"YYYY-MM-DD",V.Local.sDate)
+	F.Intrinsic.String.Build("delete from GCG_5688_APPRV_NOTES where REQ_NUM = '{0}' and LINE_NUM = '{1}' and DATE_NOTES = '{2}' and TIME_NOTES = '{3}' and APPROVER = '{4}';",V.DataTable.dtNotes(V.Local.sRows(V.Local.iRow)).PO_REQ_NUMBER!FieldVal,V.DataTable.dtNotes(V.Local.sRows(V.Local.iRow)).PO_REQ_LINE!FieldVal,V.Local.sDate,V.DataTable.dtNotes(V.Local.sRows(V.Local.iRow)).TIME_NOTES!FieldVal,V.DataTable.dtNotes(V.Local.sRows(V.Local.iRow)).APPROVER!FieldVal,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Data.DataTable.DeleteRow("dtNotes",V.Local.sRows(V.Local.iRow).Long)
+F.Intrinsic.Control.Next(V.Local.iRow)
+F.ODBC.Connection!con.Close
+F.Data.DataTable.AcceptChanges("dtNotes")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.DeleteNotes.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$bbaker$}$20200226100808569$}$pM7xsHplA2E9VCTenDTJ47gi1rF/t66W878XClpQoT5FtczXQ4Ro2cAp81wAQCX2er9dao1TC9g=
+Program.Sub.Comments.End
